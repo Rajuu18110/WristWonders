@@ -1,0 +1,504 @@
+{
+    "products": [
+        {
+            "product_id": "R001",
+            "name": "Rado HyperChrome Automatic",
+            "watch_type": "Automatic",
+            "price": 2200.00,
+            "discount": 0,
+            "gender": "men",
+            "company": "Rado",
+            "image_url": "./img/topSellSlide/top1.png"
+        },
+        {
+            "product_id": "R002",
+            "name": "Rado Centrix Quartz",
+            "watch_type": "Quartz",
+            "price": 1200.00,
+            "discount": 10,
+            "gender": "men",
+            "company": "Rado",
+            "image_url": "./img/topSellSlide/top2.png"
+        },
+        {
+            "product_id": "R003",
+            "name": "Rado Captain Cook Diver",
+            "watch_type": "Diver",
+            "price": 2500.00,
+            "discount": 20,
+            "gender": "men",
+            "company": "Rado",
+            "image_url": "./img/men/Rado_Captain_Cook_Diver.jpg"
+        },
+        {
+            "product_id": "R004",
+            "name": "Rado True Thinline",
+            "watch_type": "Quartz",
+            "price": 1400.00,
+            "discount": 5,
+            "gender": "men",
+            "company": "Rado",
+            "image_url": "./img/men/Rado_True_Thinline.jpg"
+        },
+        {
+            "product_id": "R005",
+            "name": "Rado DiaMaster",
+            "watch_type": "Automatic",
+            "price": 1800.00,
+            "discount": 12,
+            "gender": "men",
+            "company": "Rado",
+            "image_url": "./img/men/Rado_DiaMaster.jpg"
+        },
+        {
+            "product_id": "R006",
+            "name": "Rado True Thinline Xl",
+            "watch_type": "Quartz",
+            "price": 1300.00,
+            "discount": 10,
+            "gender": "women",
+            "company": "Rado",
+            "image_url": "./img/women/Rado_True_Thinline_Xl.jpg"
+        },
+        {
+            "product_id": "R007",
+            "name": "Rado Florence",
+            "watch_type": "Automatic",
+            "price": 1100.00,
+            "discount": 20,
+            "gender": "women",
+            "company": "Rado",
+            "image_url": "./img/women/Rado_Florence.jpg"
+        },
+        {
+            "product_id": "R008",
+            "name": "Rado True Diamonds",
+            "watch_type": "Quartz",
+            "price": 1700.00,
+            "discount": 15,
+            "gender": "women",
+            "company": "Rado",
+            "image_url": "./img/women/Rado_True_Diamonds.jpg"
+        },
+        {
+            "product_id": "R009",
+            "name": "Rado HyperChrome Ladies",
+            "watch_type": "Automatic",
+            "price": 2100.00,
+            "discount": 10,
+            "gender": "women",
+            "company": "Rado",
+            "image_url": "./img/women/Rado_HyperChrome_Ladies.jpg"
+        },
+        {
+            "product_id": "R010",
+            "name": "Rado Centrix Ladies",
+            "watch_type": "Quartz",
+            "price": 1200.00,
+            "discount": 5,
+            "gender": "women",
+            "company": "Rado",
+            "image_url": "./img/women/Rado_Centrix_Ladies.jpg"
+        },
+        {
+            "product_id": "C001",
+            "name": "Citizen Eco-Drive Chronograph",
+            "watch_type": "Chronograph",
+            "price": 600.00,
+            "discount": 10,
+            "gender": "men",
+            "company": "Citizen",
+            "image_url": "./img/men/Citizen_Eco-Drive_Chronograph.jpg"
+        },
+        {
+            "product_id": "C002",
+            "name": "Citizen Promaster Diver",
+            "watch_type": "Diver",
+            "price": 800.00,
+            "discount": 15,
+            "gender": "men",
+            "company": "Citizen",
+            "image_url": "./img/men/Citizen_Promaster_Diver.jpg"
+        },
+        {
+            "product_id": "C003",
+            "name": "Citizen Quartz Classic",
+            "watch_type": "Quartz",
+            "price": 300.00,
+            "discount": 5,
+            "gender": "men",
+            "company": "Citizen",
+            "image_url": "./img/men/Citizen_Quartz_Classic.jpg"
+        },
+        {
+            "product_id": "C004",
+            "name": "Citizen Eco-Drive Satellite Wave",
+            "watch_type": "Satellite",
+            "price": 1200.00,
+            "discount": 20,
+            "gender": "men",
+            "company": "Citizen",
+            "image_url": "./img/men/Citizen_Eco-Drive_Satellite_Wave.jpg"
+        },
+        {
+            "product_id": "C005",
+            "name": "Citizen Aqualand",
+            "watch_type": "Diver",
+            "price": 900.00,
+            "discount": 10,
+            "gender": "men",
+            "company": "Citizen",
+            "image_url": "./img/men/Citizen_Aqualand.jpg"
+        },
+        {
+            "product_id": "C006",
+            "name": "Citizen Eco-Drive Elegant",
+            "watch_type": "Quartz",
+            "price": 500.00,
+            "discount": 15,
+            "gender": "women",
+            "company": "Citizen",
+            "image_url": "./img/women/Citizen_Eco-Drive_Elegant.jpg"
+        },
+        {
+            "product_id": "C007",
+            "name": "Citizen L Sunrise",
+            "watch_type": "Quartz",
+            "price": 350.00,
+            "discount": 10,
+            "gender": "women",
+            "company": "Citizen",
+            "image_url": "./img/women/Citizen_L_Sunrise.jpg"
+        },
+        {
+            "product_id": "C008",
+            "name": "Citizen Eco-Drive Silhouette",
+            "watch_type": "Quartz",
+            "price": 450.00,
+            "discount": 5,
+            "gender": "women",
+            "company": "Citizen",
+            "image_url": "./img/women/Citizen_Eco-Drive_Silhouette.jpg"
+        },
+        {
+            "product_id": "C009",
+            "name": "Citizen Eco-Drive Stellar",
+            "watch_type": "Quartz",
+            "price": 550.00,
+            "discount": 20,
+            "gender": "women",
+            "company": "Citizen",
+            "image_url": "./img/women/Citizen_Eco-Drive_Stellar.jpg"
+        },
+        {
+            "product_id": "C010",
+            "name": "Citizen Exceed",
+            "watch_type": "Quartz",
+            "price": 600.00,
+            "discount": 15,
+            "gender": "women",
+            "company": "Citizen",
+            "image_url": "./img/women/Citizen_Exceed.jpg"
+        },
+        {
+            "product_id": "F001",
+            "name": "Fossil Grant Chronograph",
+            "watch_type": "Chronograph",
+            "price": 250.00,
+            "discount": 10,
+            "gender": "men",
+            "company": "Fossil",
+            "image_url": "./img/men/Fossil_Grant_Chronograph.jpg"
+        },
+        {
+            "product_id": "F002",
+            "name": "Fossil Gen 5 Smartwatch",
+            "watch_type": "Smartwatch",
+            "price": 300.00,
+            "discount": 5,
+            "gender": "men",
+            "company": "Fossil",
+            "image_url": "./img/men/Fossil_Gen_5_Smartwatch.jpg"
+        },
+        {
+            "product_id": "F003",
+            "name": "Fossil Machine",
+            "watch_type": "Automatic",
+            "price": 180.00,
+            "discount": 15,
+            "gender": "men",
+            "company": "Fossil",
+            "image_url": "./img/men/Fossil_Machine.jpg"
+        },
+        {
+            "product_id": "F004",
+            "name": "Fossil Townsman",
+            "watch_type": "Quartz",
+            "price": 220.00,
+            "discount": 20,
+            "gender": "men",
+            "company": "Fossil",
+            "image_url": "./img/men/Fossil_Townsman.jpg"
+        },
+        {
+            "product_id": "F005",
+            "name": "Fossil Minimalist",
+            "watch_type": "Quartz",
+            "price": 150.00,
+            "discount": 10,
+            "gender": "men",
+            "company": "Fossil",
+            "image_url": "./img/men/Fossil_Minimalist.jpg"
+        },
+        {
+            "product_id": "F006",
+            "name": "Fossil Jacqueline",
+            "watch_type": "Quartz",
+            "price": 180.00,
+            "discount": 15,
+            "gender": "women",
+            "company": "Fossil",
+            "image_url": "./img/women/Fossil_Jacqueline.jpg"
+        },
+        {
+            "product_id": "F007",
+            "name": "Fossil Q Venture HR",
+            "watch_type": "Smartwatch",
+            "price": 300.00,
+            "discount": 5,
+            "gender": "women",
+            "company": "Fossil",
+            "image_url": "./img/women/Fossil_Q_Venture_HR.jpg"
+        },
+        {
+            "product_id": "F008",
+            "name": "Fossil Riley Multifunction",
+            "watch_type": "Multifunction",
+            "price": 200.00,
+            "discount": 20,
+            "gender": "women",
+            "company": "Fossil",
+            "image_url": "./img/women/Fossil_Riley_Multifunction.jpg"
+        },
+        {
+            "product_id": "F009",
+            "name": "Fossil Esme",
+            "watch_type": "Quartz",
+            "price": 170.00,
+            "discount": 10,
+            "gender": "women",
+            "company": "Fossil",
+            "image_url": "./img/women/Fossil_Esme.jpg"
+        },
+        {
+            "product_id": "F010",
+            "name": "Fossil Georgia",
+            "watch_type": "Quartz",
+            "price": 160.00,
+            "discount": 5,
+            "gender": "women",
+            "company": "Fossil",
+            "image_url": "./img/women/Fossil_Georgia.jpg"
+        },
+        {
+            "product_id": "A001",
+            "name": "Armani Exchange Chronograph",
+            "watch_type": "Chronograph",
+            "price": 250.00,
+            "discount": 10,
+            "gender": "men",
+            "company": "Armani Exchange",
+            "image_url": "./img/men/Armani_Exchange_Chronograph.jpg"
+        },
+        {
+            "product_id": "A002",
+            "name": "Armani Exchange Diver",
+            "watch_type": "Diver",
+            "price": 280.00,
+            "discount": 15,
+            "gender": "men",
+            "company": "Armani Exchange",
+            "image_url": "./img/men/Armani_Exchange_Diver.jpg"
+        },
+        {
+            "product_id": "A003",
+            "name": "Armani Exchange Minimalist",
+            "watch_type": "Quartz",
+            "price": 180.00,
+            "discount": 5,
+            "gender": "men",
+            "company": "Armani Exchange",
+            "image_url": "./img/men/Armani_Exchange_Minimalist.jpg"
+        },
+        {
+            "product_id": "A004",
+            "name": "Armani Exchange Automatic",
+            "watch_type": "Automatic",
+            "price": 300.00,
+            "discount": 20,
+            "gender": "men",
+            "company": "Armani Exchange",
+            "image_url": "./img/men/Armani_Exchange_Automatic.jpg"
+        },
+        {
+            "product_id": "A005",
+            "name": "Armani Exchange Smartwatch",
+            "watch_type": "Smartwatch",
+            "price": 350.00,
+            "discount": 10,
+            "gender": "men",
+            "company": "Armani Exchange",
+            "image_url": "./img/men/Armani_Exchange_Smartwatch.jpg"
+        },
+        {
+            "product_id": "A006",
+            "name": "Armani Exchange Logo Watch",
+            "watch_type": "Quartz",
+            "price": 200.00,
+            "discount": 15,
+            "gender": "women",
+            "company": "Armani Exchange",
+            "image_url": "./img/women/Armani_Exchange_Logo_Watch.jpg"
+        },
+        {
+            "product_id": "A007",
+            "name": "Armani Exchange Silver Mesh",
+            "watch_type": "Quartz",
+            "price": 220.00,
+            "discount": 10,
+            "gender": "women",
+            "company": "Armani Exchange",
+            "image_url": "./img/women/Armani_Exchange_Silver_Mesh.jpg"
+        },
+        {
+            "product_id": "A008",
+            "name": "Armani Exchange Rose Gold",
+            "watch_type": "Quartz",
+            "price": 250.00,
+            "discount": 20,
+            "gender": "women",
+            "company": "Armani Exchange",
+            "image_url": "./img/women/Armani_Exchange_Rose_Gold.jpg"
+        },
+        {
+            "product_id": "A009",
+            "name": "Armani Exchange Smartwatch Ladies",
+            "watch_type": "Smartwatch",
+            "price": 350.00,
+            "discount": 5,
+            "gender": "women",
+            "company": "Armani Exchange",
+            "image_url": "./img/women/Armani_Exchange_Smartwatch_Ladies.jpg"
+        },
+        {
+            "product_id": "A010",
+            "name": "Armani Exchange Minimalist Rose Gold",
+            "watch_type": "Quartz",
+            "price": 230.00,
+            "discount": 10,
+            "gender": "women",
+            "company": "Armani Exchange",
+            "image_url": "./img/women/Armani_Exchange_Minimalist_Rose_Gold.jpg"
+        },
+        {
+            "product_id": "O001",
+            "name": "Omega Seamaster Diver",
+            "watch_type": "Diver",
+            "price": 4500.00,
+            "discount": 10,
+            "gender": "men",
+            "company": "Omega",
+            "image_url": "./img/men/Omega_Seamaster_Diver.jpg"
+        },
+        {
+            "product_id": "O002",
+            "name": "Omega Speedmaster Professional",
+            "watch_type": "Chronograph",
+            "price": 5000.00,
+            "discount": 5,
+            "gender": "men",
+            "company": "Omega",
+            "image_url": "./img/men/Omega_Speedmaster_Professional.jpg"
+        },
+        {
+            "product_id": "O003",
+            "name": "Omega Constellation",
+            "watch_type": "Quartz",
+            "price": 3500.00,
+            "discount": 15,
+            "gender": "men",
+            "company": "Omega",
+            "image_url": "./img/men/Omega_Constellation.jpg"
+        },
+        {
+            "product_id": "O004",
+            "name": "Omega De Ville",
+            "watch_type": "Automatic",
+            "price": 4000.00,
+            "discount": 20,
+            "gender": "men",
+            "company": "Omega",
+            "image_url": "./img/men/Omega_De_Ville.jpg"
+        },
+        {
+            "product_id": "O005",
+            "name": "Omega Seamaster Aqua Terra",
+            "watch_type": "Automatic",
+            "price": 4300.00,
+            "discount": 12,
+            "gender": "men",
+            "company": "Omega",
+            "image_url": "./img/men/Omega_Seamaster_Aqua_Terra.jpg"
+        },
+        {
+            "product_id": "O006",
+            "name": "Omega Constellation Ladies",
+            "watch_type": "Quartz",
+            "price": 3500.00,
+            "discount": 10,
+            "gender": "women",
+            "company": "Omega",
+            "image_url": "./img/women/Omega_Constellation_Ladies.jpg"
+        },
+        {
+            "product_id": "O007",
+            "name": "Omega De Ville Prestige",
+            "watch_type": "Quartz",
+            "price": 3800.00,
+            "discount": 15,
+            "gender": "women",
+            "company": "Omega",
+            "image_url": "./img/women/Omega_De_Ville_Prestige.jpg"
+        },
+        {
+            "product_id": "O008",
+            "name": "Omega Seamaster Diver 300M",
+            "watch_type": "Diver",
+            "price": 4500.00,
+            "discount": 20,
+            "gender": "women",
+            "company": "Omega",
+            "image_url": "./img/women/Omega_Seamaster_Diver_300M.jpg"
+        },
+        {
+            "product_id": "O009",
+            "name": "Omega Speedmaster Moonwatch",
+            "watch_type": "Chronograph",
+            "price": 5500.00,
+            "discount": 10,
+            "gender": "women",
+            "company": "Omega",
+            "image_url": "./img/women/Omega_Speedmaster_Moonwatch.jpg"
+        },
+        {
+            "product_id": "O010",
+            "name": "Omega Seamaster Aqua Terra Ladies",
+            "watch_type": "Automatic",
+            "price": 4300.00,
+            "discount": 5,
+            "gender": "women",
+            "company": "Omega",
+            "image_url": "./img/women/Omega_Seamaster_Aqua_Terra_Ladies.jpg"
+        }
+    ]
+}
