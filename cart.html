@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - WatchWonders</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <style>
+        .cart-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .cart-item img {
+            max-width: 80px;
+            margin-right: 20px;
+        }
+
+        .cart-item h5,
+        .cart-item h6 {
+            margin: 0;
+        }
+
+        .cart-item button {
+            margin-left: auto;
+        }
+
+        .total-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: right;
+            margin-top: 20px;
+        }
+
+        .purchase-button {
+            text-align: right;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navload"></div>
+    <div class="container">
+        <h1 class="text-center my-4">Shopping Cart</h1>
+        <div class="row">
+            <!-- Cart Items -->
+            <div class="col-md-8">
+                <div id="cartItems">
+                    <!-- Cart items will be inserted here dynamically -->
+                </div>
+            </div>
+            <!-- Cart Summary -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Cart Summary</h3>
+                        <hr>
+                        <div id="totalPrice" class="total-price">$0.00</div>
+                        <div class="purchase-button">
+                            <button class="btn btn-success btn-lg" id="purchaseButton">Purchase</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts at the end of body for better performance -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cartItemsContainer = document.getElementById('cartItems');
+            const totalPriceElement = document.getElementById('totalPrice');
+            const purchaseButton = document.getElementById('purchaseButton');
+
+            // Function to load cart items from local storage
+            function loadCartItems() {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                return cart;
+            }
+
+            // Function to save cart items to local storage
+            function saveCartItems(cart) {
+                localStorage.setItem('cart', JSON.stringify(cart));
+            }
+
+            // Function to create a cart item element
+            function createCartItemElement(item) {
+                const cartItem = document.createElement('div');
+                cartItem.className = 'cart-item';
+
+                cartItem.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}">
+                    <div>
+                        <h5>${item.name}</h5>
+                        <h6>$${item.price.toFixed(2)}</h6>
+                    </div>
+                    <button class="btn btn-danger btn-sm remove-item" data-name="${item.name}">Remove</button>
+                `;
+
+                cartItem.querySelector('.remove-item').addEventListener('click', () => {
+                    removeCartItem(item.name);
+                });
+
+                return cartItem;
+            }
+
+            // Function to render cart items
+            function renderCartItems() {
+                const cartItems = loadCartItems();
+                cartItemsContainer.innerHTML = '';
+                cartItems.forEach(item => {
+                    const cartItemElement = createCartItemElement(item);
+                    cartItemsContainer.appendChild(cartItemElement);
+                });
+                updateTotalPrice();
+            }
+
+            // Function to remove a cart item
+            function removeCartItem(name) {
+                let cart = loadCartItems();
+                cart = cart.filter(item => item.name !== name);
+                saveCartItems(cart);
+                renderCartItems();
+            }
+
+            // Function to update the total price
+            function updateTotalPrice() {
+                const cartItems = loadCartItems();
+                const totalPrice = cartItems.reduce((total, item) => total + item.price, 0);
+                totalPriceElement.textContent = `$${totalPrice.toFixed(2)}`;
+            }
+
+            // Function to handle the purchase process
+            function handlePurchase() {
+                const cartItems = loadCartItems();
+                if (cartItems.length === 0) {
+                    alert('Your cart is empty.');
+                    return;
+                }
+
+                // Simulate the payment process
+                alert('Thank you for your purchase!');
+
+                // Store order history
+                const orderHistory = JSON.parse(localStorage.getItem('orderHistory')) || [];
+                const newOrder = {
+                    date: new Date().toLocaleString(),
+                    items: cartItems.map(item => item.name),
+                    totalAmount: cartItems.reduce((total, item) => total + item.price, 0)
+                };
+                orderHistory.push(newOrder);
+                localStorage.setItem('orderHistory', JSON.stringify(orderHistory));
+
+                // Clear the cart after purchase
+                saveCartItems([]);
+                renderCartItems();
+                updateTotalPrice();
+
+                // Redirect to the orders page
+                window.location.href = 'orders.html';
+            }
+
+            // Add event listener to the purchase button
+            purchaseButton.addEventListener('click', handlePurchase);
+
+            // Load and display cart items on page load
+            renderCartItems();
+        });
+    </script>
+</body>
+
+</html>

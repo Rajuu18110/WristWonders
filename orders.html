@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders - WatchWonders</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <style>
+        .orders-container {
+            max-width: 600px;
+            margin: 50px auto;
+        }
+
+        .order-item {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container orders-container">
+        <h1 class="text-center">Order History</h1>
+        <div id="orderHistory">
+            <!-- Order history will be displayed here -->
+        </div>
+        <button id="logoutButton" class="btn btn-danger">Logout</button>
+    </div>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const orderHistoryElement = document.getElementById('orderHistory');
+            const logoutButton = document.getElementById('logoutButton');
+
+            // Check if user is logged in
+            if (localStorage.getItem('loggedIn') !== 'true') {
+                alert('Please log in to view your orders.');
+                window.location.href = 'login.html'; // Redirect to login page
+                return;
+            }
+
+            // Load order history from localStorage
+            const orderHistory = JSON.parse(localStorage.getItem('orderHistory')) || [];
+            if (orderHistory.length === 0) {
+                orderHistoryElement.innerHTML = '<p class="text-center">No orders found.</p>';
+            } else {
+                orderHistory.forEach(order => {
+                    const orderItem = document.createElement('div');
+                    orderItem.className = 'order-item';
+                    orderItem.innerHTML = `
+                        <h5>Order Date: ${order.date}</h5>
+                        <p>Items: ${order.items.join(', ')}</p>
+                        <p>Total Amount: $${order.totalAmount.toFixed(2)}</p>
+                        <hr>
+                    `;
+                    orderHistoryElement.appendChild(orderItem);
+                });
+            }
+
+            // Logout functionality
+            logoutButton.addEventListener('click', function () {
+                localStorage.removeItem('loggedIn');
+                alert('You have been logged out.');
+                window.location.href = 'login.html'; // Redirect to login page
+            });
+        });
+    </script>
+</body>
+
+</html>

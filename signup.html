@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - WatchWonders</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <style>
+        .signup-container {
+            max-width: 400px;
+            margin: 50px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navload">
+
+    </div>
+    
+    <div class="container signup-container">
+        <h1 class="text-center">Sign Up</h1>
+        <form id="signupForm">
+            <div class="mb-3">
+                <label for="signupEmail" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="signupEmail" required>
+            </div>
+            <div class="mb-3">
+                <label for="signupPassword" class="form-label">Password</label>
+                <input type="password" class="form-control" id="signupPassword" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+        </form>
+        <p class="text-center mt-3">Already have an account? <a href="login.html">Login here</a>.</p>
+    </div>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const email = document.getElementById('signupEmail').value;
+            const password = document.getElementById('signupPassword').value;
+
+            const user = { email, password };
+            localStorage.setItem('user', JSON.stringify(user));
+            alert('Signup successful! Please log in.');
+            window.location.href = 'login.html'; // Redirect to login page
+        });
+    </script>
+</body>
+
+</html>
