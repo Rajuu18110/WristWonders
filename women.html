@@ -9,36 +9,61 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <style>
-        .product {
-            border: 1px solid #ddd;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 5px;
-        }
-        .filter-section {
-            margin-bottom: 30px;
-        }
         .search-bar {
             margin-bottom: 20px;
         }
+
         .filter-toggle {
             display: none;
         }
+
         @media (max-width: 767.98px) {
             .filter-section {
                 display: none;
             }
+
             .filter-toggle {
                 display: block;
             }
         }
+
+        .star-rating i {
+            color: gold;
+            font-size: 1.2rem;
+        }
+
+        .star-rating i.bi-star-half {
+            color: gold;
+        }
+
+        .star-rating i.bi-star {
+            color: lightgray;
+        }
+
+            .filter-section {
+                position: sticky;
+                /* Makes the element sticky */
+                top: 0;
+                /* Sets the distance from the top of the viewport */
+                height: 100vh;
+                /* Full height of the viewport */
+                overflow-y: auto;
+                /* Enables vertical scrolling within the filter menu if needed */
+                background-color: #f8f9fa;
+                /* Optional: Set a background color to distinguish the sticky menu */
+                padding: 15px;
+                /* Optional: Add padding for better spacing */
+            }
     </style>
 </head>
 
 <body>
-    <div class="container-fluid">
-        <!-- Search Bar -->
+    <!-- Navbar will be loaded here -->
+    <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary" id="navbar"
+        style="background-color: #ffffff !important;">
+    </nav>
 
+    <div class="container-fluid">
         <div class="row">
             <!-- Toggle Button for Filter Menu (Mobile View) -->
             <div class="col-md-12 filter-toggle">
@@ -47,11 +72,11 @@
 
             <!-- Filter Menu -->
             <div class="col-md-3 filter-section">
-                <h3>Filters</h3>
-                <button class="btn btn-secondary mb-3" id="clearFilters">Clear Filters</button>
+                <h3 class="text-center mt-4 fw-bolder">Filter</h3>
+                <hr class="border border-danger border-2 opacity-50">
 
-                <h5>Watch Type</h5>
-                <div class="mb-3">
+                <h5 class="ms-1">Watch Types:</h5>
+                <div class="mb-3 ms-3">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="Automatic" id="typeAutomatic">
                         <label class="form-check-label" for="typeAutomatic">Automatic</label>
@@ -74,8 +99,8 @@
                     </div>
                 </div>
 
-                <h5>Price Range</h5>
-                <select class="form-select mb-3" id="watchPrice">
+                <h5 class="ms-1">Price Range</h5>
+                <select class="form-select mb-3 ms-3" id="watchPrice">
                     <option value="">All Prices</option>
                     <option value="0-50">Under $50</option>
                     <option value="50-100">$50 - $100</option>
@@ -84,8 +109,8 @@
                     <option value="500+">Above $500</option>
                 </select>
 
-                <h5>Brand</h5>
-                <div class="mb-3">
+                <h5 class="ms-1">Brand</h5>
+                <div class="mb-3 ms-3">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="Rado" id="brandRado">
                         <label class="form-check-label" for="brandRado">Rado</label>
@@ -99,21 +124,24 @@
                         <label class="form-check-label" for="brandFossil">Fossil</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="Armani Exchange" id="brandArmaniExchange">
+                        <input class="form-check-input" type="checkbox" value="Armani Exchange"
+                            id="brandArmaniExchange">
                         <label class="form-check-label" for="brandArmaniExchange">Armani Exchange</label>
                     </div>
                 </div>
+
+                <button class="btn btn-outline-secondary btn-sm mb-3 ms-3 px-5" id="clearFilters">Clear Filters</button>
             </div>
 
             <!-- Product List -->
-            <div class="col-md-9">
-                
+            <div class="col-md-9 bg-black">
+                <!-- Search Bar -->
                 <div class="row search-bar">
-                    <div class="col-md-12">
+                    <div class="col-md-12 mt-4">
                         <input type="text" id="searchInput" class="form-control" placeholder="Search for watches...">
                     </div>
                 </div>
-                
+
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5 p-md-3 pb-md-5" id="productList">
                     <!-- Products will be inserted here dynamically -->
                 </div>
@@ -141,7 +169,7 @@
                 try {
                     const response = await fetch('./js/watches_catalog.json');
                     const data = await response.json();
-                    return data.products.filter(product => product.gender === 'women');
+                    return data.products.filter(product => product.gender === 'men');
                 } catch (error) {
                     console.error('Error loading products:', error);
                     return [];
@@ -152,13 +180,30 @@
             function createProductCard(product) {
                 const hasDiscount = product.discount > 0;
                 const discountedPrice = product.price - (product.price * (product.discount / 100));
+                const productUrl = `./productView.html?name=${encodeURIComponent(product.product_id)}`;
+
+                // Generate star ratings
+                const rating = product.rating || 0; // Assuming product.rating is a number between 0 and 5
+                const numRatings = product.numRatings || 0; // Number of people who rated
+
+                const stars = Array.from({ length: 5 }, (_, index) => {
+                    const isFull = index < Math.floor(rating);
+                    const isHalf = index === Math.floor(rating) && (rating % 1) >= 0.5;
+                    return `
+                        <i class="bi bi-star${isFull ? '-fill' : ''}${isHalf ? '-half' : ''}"></i>
+                    `;
+                }).join('');
 
                 return `
                     <div class="col product" data-type="${product.watch_type}" data-price="${product.price}" data-brand="${product.company}">
                         <div class="card h-100">
-                            <img src="${product.image_url}" class="card-img-top p-2" alt="${product.name}">
+                            <img src="${product.image_url}" class="card-img-top p-2 product-image" data-url="${productUrl}" alt="${product.name}">
                             <div class="card-body">
-                                <h5 class="card-title">${product.name}</h5>
+                                <h5 class="card-title product-title" data-url="${productUrl}">${product.name}</h5>
+                                <div class="star-rating mb-2">
+                                    ${stars}
+                                    <span class="ms-2">(${numRatings} ratings)</span>
+                                </div>
                                 <h5>Company: ${product.company}</h5>
                                 ${hasDiscount ? `
                                     <h6>Price: <span class="text-muted"><s>$${product.price.toFixed(2)}</s></span></h6>
@@ -168,17 +213,32 @@
                                 `}
                             </div>
                             <div class="card-footer">
-                                <button class="btn btn-primary add-to-cart" data-name="${product.name}" data-price="${product.price}">Add to Cart</button>
+                                <button class="btn btn-primary add-to-cart" data-name="${product.name}" data-price="${product.price}" data-disPrice="${discountedPrice.toFixed(2)}" data-image="${product.image_url}">Add to Cart</button>
                             </div>
                         </div>
                     </div>
                 `;
             }
 
+            // Function to set up event listeners
+            function setUpEventListeners() {
+                // Add event listeners for product images and titles
+                document.querySelectorAll('.product-image, .product-title').forEach(element => {
+                    element.addEventListener('click', function () {
+                        const productUrl = this.getAttribute('data-url');
+                        if (productUrl) {
+                            window.location.href = productUrl;
+                        }
+                    });
+                });
+            }
+
             // Function to render products
             function renderProducts(products) {
                 productList.innerHTML = products.map(createProductCard).join('');
                 filterProducts(); // Apply filters to newly added products
+                addCartEventListeners(); // Add event listeners to the new buttons
+                setUpEventListeners(); // Set up event listeners for product images and titles
             }
 
             // Function to filter products
@@ -225,6 +285,28 @@
                 filterProducts(); // Reapply filters after clearing
             }
 
+            // Function to add item to cart
+            function addToCart(name, price, disPrice, image) {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                cart.push({ name, price, disPrice, image });
+                localStorage.setItem('cart', JSON.stringify(cart));
+                alert('Item added to cart!');
+            }
+
+            // Function to add event listeners to "Add to Cart" buttons
+            function addCartEventListeners() {
+                const addToCartButtons = document.querySelectorAll('.add-to-cart');
+                addToCartButtons.forEach(button => {
+                    button.addEventListener('click', (event) => {
+                        const name = button.getAttribute('data-name');
+                        const price = parseFloat(button.getAttribute('data-price'));
+                        const disPrice = parseFloat(button.getAttribute('data-disPrice'));
+                        const image = button.getAttribute('data-image');
+                        addToCart(name, price, disPrice, image);
+                    });
+                });
+            }
+
             // Event listeners for filter changes
             typeCheckboxes.forEach(checkbox => checkbox.addEventListener('change', filterProducts));
             brandCheckboxes.forEach(checkbox => checkbox.addEventListener('change', filterProducts));
@@ -246,7 +328,6 @@
             // Load and display products
             loadProducts().then(renderProducts);
         });
-
     </script>
 </body>
 

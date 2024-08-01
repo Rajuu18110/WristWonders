@@ -8,12 +8,61 @@ document.addEventListener('DOMContentLoaded', () => {
             return response.text();
         })
         .then(data => {
-            document.getElementById('navload').innerHTML = data;
+            document.getElementById('navbar').innerHTML = data;
+            updateNavbar()
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+            const currentPath = window.location.pathname.split('/').pop();
+
+            navLinks.forEach(link => {
+                const href = link.getAttribute('href').split('/').pop();
+                if (currentPath === href) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
         })
         .catch(error => {
             console.error('There was a problem with the fetch operation:', error);
         });
 });
+function updateNavbar() {
+    // Example user authentication status
+    // In a real-world scenario, this should be determined by your authentication logic
+    const isLoggedIn = localStorage.getItem('loggedIn') === 'true'; // Replace this with actual authentication check
+    const userSection = document.getElementById('user-section');
+    const name = JSON.parse(localStorage.getItem('user'));
+
+
+    if (isLoggedIn) {
+        userSection.innerHTML = `
+            <div class="dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    ${name.firstName}
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                    <li><a class="dropdown-item" href="./profile.html">Edit Info</a></li>
+                    <li><a class="dropdown-item" href="./orders.html">Orders</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li class="dropdown-item" id="logoutButton">Logout</li>
+                </ul>
+            </div>
+        `;
+
+        const logoutButton = document.getElementById('logoutButton');
+        console.log(logoutButton);
+        logoutButton.addEventListener('click', function () {
+            localStorage.removeItem('loggedIn');
+            window.location.href = 'index.html'; // Redirect to login page
+        });
+    } else {
+        userSection.innerHTML = `
+            <a class="nav-link" href="./login.html">Login</a>
+        `;
+    }
+}
+// Logout functionality
+
 
 let itemstopSellSlide = document.querySelectorAll('.carousel .carousel-item.topSellSlide')
 

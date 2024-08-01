@@ -8,6 +8,8 @@
             "discount": 0,
             "gender": "men",
             "company": "Rado",
+            "rating": "4.5",
+            "numRatings":"2500",
             "image_url": "./img/topSellSlide/top1.png"
         },
         {

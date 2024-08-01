@@ -26,16 +26,44 @@
                 display: block;
             }
         }
+
+        .star-rating i {
+            color: gold;
+            font-size: 1.2rem;
+        }
+
+        .star-rating i.bi-star-half {
+            color: gold;
+        }
+
+        .star-rating i.bi-star {
+            color: lightgray;
+        }
+
+        .filter-section {
+            position: sticky;
+            /* Makes the element sticky */
+            top: 0;
+            /* Sets the distance from the top of the viewport */
+            height: 100vh;
+            /* Full height of the viewport */
+            overflow-y: auto;
+            /* Enables vertical scrolling within the filter menu if needed */
+            background-color: #f8f9fa;
+            /* Optional: Set a background color to distinguish the sticky menu */
+            padding: 15px;
+            /* Optional: Add padding for better spacing */
+        }
     </style>
 </head>
 
 <body>
+    <!-- Navbar will be loaded here -->
+    <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary" id="navbar"
+        style="background-color: #ffffff !important;">
+    </nav>
+
     <div class="container-fluid">
-
-        <div id="navload">
-
-        </div>
-
         <div class="row">
             <!-- Toggle Button for Filter Menu (Mobile View) -->
             <div class="col-md-12 filter-toggle">
@@ -47,7 +75,7 @@
                 <h3 class="text-center mt-4 fw-bolder">Filter</h3>
                 <hr class="border border-danger border-2 opacity-50">
 
-                <h5 class="ms-1">Watch Types:</h5>
+                <h5 class="ms-1">Watch Types</h5>
                 <div class="mb-3 ms-3">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="Automatic" id="typeAutomatic">
@@ -72,7 +100,7 @@
                 </div>
 
                 <h5 class="ms-1">Price Range</h5>
-                <select class="form-select mb-3 ms-3" id="watchPrice">
+                <select class="form-select mb-3 ms-3 w-75" id="watchPrice">
                     <option value="">All Prices</option>
                     <option value="0-50">Under $50</option>
                     <option value="50-100">$50 - $100</option>
@@ -152,27 +180,57 @@
             function createProductCard(product) {
                 const hasDiscount = product.discount > 0;
                 const discountedPrice = product.price - (product.price * (product.discount / 100));
+                const productUrl = `./productView.html?name=${encodeURIComponent(product.product_id)}`;
+
+                // Generate star ratings
+                const rating = product.rating || 0; // Assuming product.rating is a number between 0 and 5
+                const numRatings = product.numRatings || 0; // Number of people who rated
+
+                const stars = Array.from({ length: 5 }, (_, index) => {
+                    const isFull = index < Math.floor(rating);
+                    const isHalf = index === Math.floor(rating) && (rating % 1) >= 0.5;
+                    return `
+                        <i class="bi bi-star${isFull ? '-fill' : ''}${isHalf ? '-half' : ''}"></i>
+                    `;
+                }).join('');
 
                 return `
-            <div class="col product" data-type="${product.watch_type}" data-price="${product.price}" data-brand="${product.company}">
-                <div class="card h-100">
-                    <img src="${product.image_url}" class="card-img-top p-2" alt="${product.name}">
-                    <div class="card-body">
-                        <h5 class="card-title">${product.name}</h5>
-                        <h5>Company: ${product.company}</h5>
-                        ${hasDiscount ? `
-                            <h6>Price: <span class="text-muted"><s>$${product.price.toFixed(2)}</s></span></h6>
-                            <h6>Discounted Price: $${discountedPrice.toFixed(2)}</h6>
-                        ` : `
-                            <h6>Price: $${product.price.toFixed(2)}</h6>
-                        `}
+                    <div class="col product" data-type="${product.watch_type}" data-price="${product.price}" data-brand="${product.company}">
+                        <div class="card h-100">
+                            <img src="${product.image_url}" class="card-img-top p-2 product-image" data-url="${productUrl}" alt="${product.name}">
+                            <div class="card-body">
+                                <h5 class="card-title product-title" data-url="${productUrl}">${product.name}</h5>
+                                <div class="star-rating mb-2">
+                                    ${stars}
+                                    <span class="ms-2">(${numRatings} ratings)</span>
+                                </div>
+                                <h5>Company: ${product.company}</h5>
+                                ${hasDiscount ? `
+                                    <h6>Price: <span class="text-muted"><s>$${product.price.toFixed(2)}</s></span></h6>
+                                    <h6>Discounted Price: $${discountedPrice.toFixed(2)}</h6>
+                                ` : `
+                                    <h6>Price: $${product.price.toFixed(2)}</h6>
+                                `}
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-primary add-to-cart" data-name="${product.name}" data-price="${product.price}" data-disPrice="${discountedPrice.toFixed(2)}" data-image="${product.image_url}">Add to Cart</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-footer">
-                        <button class="btn btn-primary add-to-cart" data-name="${product.name}" data-price="${product.price}" data-image="${product.image_url}">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-        `;
+                `;
+            }
+
+            // Function to set up event listeners
+            function setUpEventListeners() {
+                // Add event listeners for product images and titles
+                document.querySelectorAll('.product-image, .product-title').forEach(element => {
+                    element.addEventListener('click', function () {
+                        const productUrl = this.getAttribute('data-url');
+                        if (productUrl) {
+                            window.location.href = productUrl;
+                        }
+                    });
+                });
             }
 
             // Function to render products
@@ -180,6 +238,7 @@
                 productList.innerHTML = products.map(createProductCard).join('');
                 filterProducts(); // Apply filters to newly added products
                 addCartEventListeners(); // Add event listeners to the new buttons
+                setUpEventListeners(); // Set up event listeners for product images and titles
             }
 
             // Function to filter products
@@ -227,9 +286,16 @@
             }
 
             // Function to add item to cart
-            function addToCart(name, price, image) {
+            function addToCart(name, price, disPrice, image) {
                 const cart = JSON.parse(localStorage.getItem('cart')) || [];
-                cart.push({ name, price, image });
+                const existingItem = cart.find(item => item.name === name);
+
+                if (existingItem) {
+                    existingItem.quantity += 1; // Increment quantity if item already exists
+                } else {
+                    cart.push({ name, price, disPrice, image, quantity: 1 });
+                }
+
                 localStorage.setItem('cart', JSON.stringify(cart));
                 alert('Item added to cart!');
             }
@@ -241,8 +307,9 @@
                     button.addEventListener('click', (event) => {
                         const name = button.getAttribute('data-name');
                         const price = parseFloat(button.getAttribute('data-price'));
+                        const disPrice = parseFloat(button.getAttribute('data-disPrice'));
                         const image = button.getAttribute('data-image');
-                        addToCart(name, price, image);
+                        addToCart(name, price, disPrice, image);
                     });
                 });
             }
@@ -255,11 +322,7 @@
 
             // Event listener for toggle filter button
             toggleFilter.addEventListener('click', () => {
-                if (filterSection.style.display === 'none' || filterSection.style.display === '') {
-                    filterSection.style.display = 'block';
-                } else {
-                    filterSection.style.display = 'none';
-                }
+                filterSection.classList.toggle('d-none');
             });
 
             // Event listener for clear filters button
@@ -268,8 +331,6 @@
             // Load and display products
             loadProducts().then(renderProducts);
         });
-
-
     </script>
 </body>
 
