@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        .star-rating i {
+            color: #f39c12;
+        }
+    </style>
 </head>
 
 <body>
@@ -15,34 +20,17 @@
     <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary" id="navbar" style="background-color: #ffffff !important;">
     </nav>
 
-    <!-- slider -->
+    <!-- Responsive video section -->
     <div class="container-fluid p-0">
-        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="3000">
-                    <img src="./img/main1.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item" data-bs-interval="3000">
-                    <img src="./img/main2.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item" data-bs-interval="3000">
-                    <img src="./img/main3.jpg" class="d-block w-100" alt="...">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+        <div class="ratio ratio-16x9">
+            <video autoplay loop>
+                <source src="./videos/firstRado.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
     </div>
 
-    <!-- welcome msg -->
+    <!-- Welcome message -->
     <div class="container-fluid p-0">
         <div class="row m-md-5 p-md-5">
             <div class="col-md-8 p-5 p-md-0">
@@ -54,7 +42,7 @@
 
                 <p>Explore our diverse range, find the perfect watch to suit your style, and experience the
                     craftsmanship and innovation that define each piece. Enjoy a seamless shopping experience with our
-                    user-friendly interface, detailed product information, and exceptional customer service. </p>
+                    user-friendly interface, detailed product information, and exceptional customer service.</p>
                 <p>Thank you for choosing WatchWorld. We're excited to help you find your next favorite watch!</p>
             </div>
             <div class="col-md-4">
@@ -63,216 +51,14 @@
         </div>
     </div>
 
-    <!-- top sell slide -->
-    <!-- <div class="container-fluid p-5 backLight">
-        <div class="row p-0">
-            <div class="col-md-4">
-                <p class="text-center">Elegant</p>
-                <h1 class="text-center">Top Seller</h1>
-                <p class="text-center">Discover our highly praised products!</p>
-            </div>
-            <div class="col-md-8">
-                <div class="row mx-auto my-auto justify-content-center">
-                    <div id="topSellSlide" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner carcom" role="">
-                            <div class="carousel-item topSellSlide active" data-bs-interval="20000000">
-                                <div class="col-md-4 p-0 p-md-3">
-                                    <div class="card h-100">
-                                        <div class="card-img topSellImg mx-auto">
-                                            <img src="./img/topSellSlide/top1.png" class="img-fluid imgSell" id="imgSell1">
-                                        </div>
-                                        <h5 class="card-title text-center">BMW</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item topSellSlide " data-bs-interval="20000000">
-                                <div class="col-md-4 p-0 p-md-3">
-                                    <div class="card h-100">
-                                        <div class="card-img topSellImg mx-auto">
-                                            <img src="./img/topSellSlide/top2.png" class="img-fluid imgSell" id="imgSell2">
-                                        </div>
-                                        <h5 class="card-title text-center">BMW</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item topSellSlide " data-bs-interval="20000000">
-                                <div class="col-md-4 p-0 p-md-3">
-                                    <div class="card h-100">
-                                        <div class="card-img topSellImg mx-auto">
-                                            <img src="./img/topSellSlide/top3.png" class="img-fluid imgSell" id="imgSell3">
-                                        </div>
-                                        <h5 class="card-title text-center">BMW</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item topSellSlide " data-bs-interval="20000000">
-                                <div class="col-md-4 p-0 p-md-3">
-                                    <div class="card h-100">
-                                        <div class="card-img topSellImg mx-auto">
-                                            <img src="./img/topSellSlide/top4.png" class="img-fluid imgSell" id="imgSell4">
-                                        </div>
-                                        <h5 class="card-title text-center">BMW</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item topSellSlide " data-bs-interval="20000000">
-                                <div class="col-md-4 p-0 p-md-3">
-                                    <div class="card h-100">
-                                        <div class="card-img topSellImg mx-auto">
-                                            <img src="./img/topSellSlide/top5.png" class="img-fluid imgSell" id="imgSell5">
-                                        </div>
-                                        <h5 class="card-title text-center">BMW</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item topSellSlide " data-bs-interval="20000000">
-                                <div class="col-md-4 p-0 p-md-3">
-                                    <div class="card h-100">
-                                        <div class="card-img topSellImg mx-auto">
-                                            <img src="./img/topSellSlide/top6.png" class="img-fluid imgSell" id="imgSell6">
-                                        </div>
-                                        <h5 class="card-title text-center">BMW</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item topSellSlide " data-bs-interval="20000000">
-                                <div class="col-md-4 p-0 p-md-3">
-                                    <div class="card h-100">
-                                        <div class="card-img topSellImg mx-auto">
-                                            <img src="./img/topSellSlide/top7.png" class="img-fluid imgSell" id="imgSell7">
-                                        </div>
-                                        <h5 class="card-title text-center">BMW</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item topSellSlide " data-bs-interval="20000000">
-                                <div class="col-md-4 p-0 p-md-3">
-                                    <div class="card h-100">
-                                        <div class="card-img topSellImg mx-auto">
-                                            <img src="./img/topSellSlide/top8.png" class="img-fluid imgSell" id="imgSell8">
-                                        </div>
-                                        <h5 class="card-title text-center">BMW</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row justify-content-end" style="height: 3rem;">
-                        <div class="col-2 d-flex justify-content-center">
-                            <a href="#topSellSlide" role="button" data-bs-slide="prev"><i class="bi bi-arrow-left-circle "
-                                    style="font-size: 1.6rem;"></i></a>
-                            <a href="#topSellSlide" role="button" class="ms-3" data-bs-slide="next"><i class="bi bi-arrow-right-circle "
-                                    style="font-size: 1.6rem;"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-    <!-- top sell bar -->
+    <!-- Top sell bar -->
     <div class="container-fluid bg-black">
         <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-5 p-md-3 pb-md-5">
-            <div class="col">
-                <div class="card h-100">
-                    <img src="./img/topSellSlide/top1.png" class="card-img-top img1 p-2" id="img1" alt="..." style="display: block;">
-                    <img src="./img/topSellSlide/top1-1.png" class="card-img-top img2 p-2 " id="img2" alt="..." style="display: none;">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-body-secondary">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="./img/topSellSlide/top2.png" class="card-img-top img1 p-2" id="img1" alt="...">
-                    <img src="./img/topSellSlide/top2-1.png" class="card-img-top img2 p-2" id="img2" alt="..." style="display: none;">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-body-secondary">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="./img/topSellSlide/top3.png" class="card-img-top img1 p-2" id="img1" alt="...">
-                    <img src="./img/topSellSlide/top3-1.png" class="card-img-top img2 p-2" id="img2" alt="..." style="display: none;">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-body-secondary">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="./img/topSellSlide/top4.png" class="card-img-top img1 p-2" id="img1" alt="...">
-                    <img src="./img/topSellSlide/top4-1.png" class="card-img-top img2 p-2" id="img2" alt="..." style="display: none;">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-body-secondary">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="./img/topSellSlide/top5.png" class="card-img-top img1 p-2" id="img1" alt="...">
-                    <img src="./img/topSellSlide/top5-1.png" class="card-img-top img2 p-2" id="img2" alt="..." style="display: none;">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-body-secondary">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="./img/topSellSlide/top6.png" class="card-img-top img1 p-2" id="img1" alt="...">
-                    <img src="./img/topSellSlide/top6-1.png" class="card-img-top img2 p-2" id="img2" alt="..." style="display: none;">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-body-secondary">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="./img/topSellSlide/top7.png" class="card-img-top img1 p-2" id="img1" alt="...">
-                    <img src="./img/topSellSlide/top7-1.png" class="card-img-top img2 p-2" id="img2" alt="..." style="display: none;">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-body-secondary">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="./img/topSellSlide/top8.png" class="card-img-top img1 p-2" id="img1" alt="...">
-                    <img src="./img/topSellSlide/top8-1.png" class="card-img-top img2 p-2" id="img2" alt="..." style="display: none;">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-body-secondary">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-            </div>
+            <!-- Product cards will be dynamically injected here -->
         </div>
     </div>
 
-    <!-- video -->
+    <!-- Video -->
     <div class="container-fluid">
         <div class="row align-items-center p-md-5">
             <div class="col-md-6 text-center text-md-left">
@@ -294,6 +80,96 @@
     <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="./js/components.js"></script>
     <script src="./js/main.js"></script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const productList = document.querySelector('.container-fluid.bg-black .row');
+
+        // Function to load products from JSON
+        async function loadProducts() {
+            try {
+                const response = await fetch('./js/watches_catalog.json');
+                const data = await response.json();
+                return data.products.filter(product => product.topShow && product.gender === 'men');
+            } catch (error) {
+                console.error('Error loading products:', error);
+                return [];
+            }
+        }
+
+        // Function to create a product card
+        function createProductCard(product) {
+            const hasDiscount = product.discount > 0;
+            const discountedPrice = product.price - (product.price * (product.discount / 100));
+            return `
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="${product.image_url}" class="card-img-top img1 p-2" alt="Product image" style="display: block;">
+                        <img src="${product.sideImg_url}" class="card-img-top img2 p-2" alt="Product side image" style="display: none;">
+                        <div class="card-body">
+                            <h5 class="card-title">${product.name}</h5>
+                            ${hasDiscount ? `
+                                    <h6>Price: <span class="text-muted"><s>$${product.price.toFixed(2)}</s></span></h6>
+                                    <h6>Discounted Price: $${discountedPrice.toFixed(2)}</h6>
+                                ` : `
+                                    <h6>Price: $${product.price.toFixed(2)}</h6>
+                                `}
+                            <div class="star-rating mb-2">
+                                ${Array.from({ length: 5 }, (_, index) => {
+                                    const isFull = index < Math.floor(product.rating);
+                                    const isHalf = index === Math.floor(product.rating) && (product.rating % 1) >= 0.5;
+                                    return `<i class="bi bi-star${isFull ? '-fill' : ''}${isHalf ? '-half' : ''}"></i>`;
+                                }).join('')}
+                                <span class="ms-2">(${product.numRatings} ratings)</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-primary add-to-cart" data-name="${product.name}" data-price="${product.price}" data-disPrice="${discountedPrice.toFixed(2)}" data-image="${product.image_url}">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Function to add item to cart
+        function addToCart(name, price, disPrice, image) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const existingItem = cart.find(item => item.name === name);
+
+            if (existingItem) {
+                existingItem.quantity += 1; // Increment quantity if item already exists
+            } else {
+                cart.push({ name, price, disPrice, image, quantity: 1 });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert('Item added to cart!');
+        }
+
+        // Function to add event listeners to "Add to Cart" buttons
+        function addCartEventListeners() {
+            const addToCartButtons = document.querySelectorAll('.add-to-cart');
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const name = button.getAttribute('data-name');
+                    const price = parseFloat(button.getAttribute('data-price'));
+                    const disPrice = parseFloat(button.getAttribute('data-disPrice'));
+                    const image = button.getAttribute('data-image');
+                    addToCart(name, price, disPrice, image);
+                });
+            });
+        }
+
+        // Function to render products
+        function renderProducts(products) {
+            productList.innerHTML = products.map(createProductCard).join('');
+            addCartEventListeners(); // Add event listeners to the new buttons
+        }
+
+        // Load and display products
+        loadProducts().then(renderProducts);
+    });
+    </script>
 </body>
 
 </html>

@@ -9,8 +9,17 @@
             "gender": "men",
             "company": "Rado",
             "rating": "4.5",
-            "numRatings":"2500",
-            "image_url": "./img/topSellSlide/top1.png"
+            "numRatings": "2500",
+            "isNew": true,
+            "image_url": "./img/menwatch/top1.png",
+            "sideImg_url": "./img/menwatch/top1-1.png",
+            "images": [
+                "./img/topSellSlide/top1.png",
+                "./img/menwatch/1.png",
+                "./img/menwatch/1_side.png"
+            ],
+            "topShow": true,
+            "description": "A sophisticated automatic watch with a sleek design, perfect for any occasion."
         },
         {
             "product_id": "R002",
@@ -20,7 +29,18 @@
             "discount": 10,
             "gender": "men",
             "company": "Rado",
-            "image_url": "./img/topSellSlide/top2.png"
+            "rating": "4.2",
+            "numRatings": "1500",
+            "isNew": false,
+            "image_url": "./img/menwatch/top2.png",
+            "sideImg_url": "./img/menwatch/top2-1.png",
+            "images": [
+                "./img/topSellSlide/top2.png",
+                "./img/menwatch/2.png",
+                "./img/menwatch/2_side.png"
+            ],
+            "topShow": true,
+            "description": "A classic quartz watch with a refined look, offering reliable timekeeping."
         },
         {
             "product_id": "R003",
@@ -30,7 +50,18 @@
             "discount": 20,
             "gender": "men",
             "company": "Rado",
-            "image_url": "./img/men/Rado_Captain_Cook_Diver.jpg"
+            "rating": "4.7",
+            "numRatings": "800",
+            "isNew": true,
+            "image_url": "./img/menwatch/top3.png",
+            "sideImg_url": "./img/menwatch/top3-1.png",
+            "images": [
+                "./img/topSellSlide/top3.png",
+                "./img/menwatch/3.png",
+                "./img/menwatch/3_side.png"
+            ],
+            "topShow": true,
+            "description": "Designed for diving enthusiasts, this watch combines durability with elegant design."
         },
         {
             "product_id": "R004",
@@ -40,7 +71,18 @@
             "discount": 5,
             "gender": "men",
             "company": "Rado",
-            "image_url": "./img/men/Rado_True_Thinline.jpg"
+            "rating": "4.1",
+            "numRatings": "1100",
+            "isNew": false,
+            "image_url": "./img/menwatch/top4.png",
+            "sideImg_url": "./img/menwatch/top4-1.png",
+            "images": [
+                "./img/topSellSlide/top4.png",
+                "./img/menwatch/4.png",
+                "./img/menwatch/4_side.png"
+            ],
+            "topShow": true,
+            "description": "A slim and lightweight quartz watch ideal for those who value minimalistic design."
         },
         {
             "product_id": "R005",
@@ -50,7 +92,18 @@
             "discount": 12,
             "gender": "men",
             "company": "Rado",
-            "image_url": "./img/men/Rado_DiaMaster.jpg"
+            "rating": "4.4",
+            "numRatings": "900",
+            "isNew": true,
+            "image_url": "./img/menwatch/top5.png",
+            "sideImg_url": "./img/menwatch/top5-1.png",
+            "images": [
+                "./img/topSellSlide/top5.png",
+                "./img/menwatch/5.png",
+                "./img/menwatch/5_side.png"
+            ],
+            "topShow": true,
+            "description": "An elegant automatic watch with a durable build, designed for modern men."
         },
         {
             "product_id": "R006",
@@ -60,7 +113,18 @@
             "discount": 10,
             "gender": "women",
             "company": "Rado",
-            "image_url": "./img/women/Rado_True_Thinline_Xl.jpg"
+            "rating": "4.3",
+            "numRatings": "600",
+            "isNew": false,
+            "image_url": "./img/menwatch/top5.png",
+            "sideImg_url": "./img/menwatch/top5-1.png",
+            "images": [
+                "./img/topSellSlide/top6.png",
+                "./img/women/6.png",
+                "./img/women/6_side.png"
+            ],
+            "topShow": false,
+            "description": "A refined quartz watch with an extra-large design for those who appreciate bold style."
         },
         {
             "product_id": "R007",
@@ -70,7 +134,18 @@
             "discount": 20,
             "gender": "women",
             "company": "Rado",
-            "image_url": "./img/women/Rado_Florence.jpg"
+            "rating": "4.6",
+            "numRatings": "300",
+            "isNew": true,
+            "image_url": "./img/women/9.png",
+            "sideImg_url": "./img/women/17.png",
+            "images": [
+                "./img/topSellSlide/top7.png",
+                "./img/women/7.png",
+                "./img/women/7_side.png"
+            ],
+            "topShow": false,
+            "description": "A stylish automatic watch designed for women who appreciate elegance and craftsmanship."
         },
         {
             "product_id": "R008",
@@ -80,7 +155,18 @@
             "discount": 15,
             "gender": "women",
             "company": "Rado",
-            "image_url": "./img/women/Rado_True_Diamonds.jpg"
+            "rating": "4.8",
+            "numRatings": "400",
+            "isNew": false,
+            "image_url": "./img/women/9.png",
+            "sideImg_url": "./img/women/18.png",
+            "images": [
+                "./img/topSellSlide/top8.png",
+                "./img/women/8.png",
+                "./img/women/8_side.png"
+            ],
+            "topShow": false,
+            "description": "A luxurious quartz watch adorned with diamonds, perfect for special occasions."
         },
         {
             "product_id": "R009",
@@ -90,7 +176,18 @@
             "discount": 10,
             "gender": "women",
             "company": "Rado",
-            "image_url": "./img/women/Rado_HyperChrome_Ladies.jpg"
+            "rating": "4.5",
+            "numRatings": "700",
+            "isNew": true,
+            "image_url": "./img/women/9.png",
+            "sideImg_url": "./img/women/19.png",
+            "images": [
+                "./img/women/Rado_HyperChrome_Ladies.jpg",
+                "./img/women/9.png",
+                "./img/women/9_side.png"
+            ],
+            "topShow": false,
+            "description": "A sophisticated automatic watch with a bold design, perfect for the modern woman."
         },
         {
             "product_id": "R010",
@@ -100,7 +197,18 @@
             "discount": 5,
             "gender": "women",
             "company": "Rado",
-            "image_url": "./img/women/Rado_Centrix_Ladies.jpg"
+            "rating": "4.0",
+            "numRatings": "500",
+            "isNew": false,
+            "image_url": "./img/women/9.png",
+            "sideImg_url": "./img/women/20.png",
+            "images": [
+                "./img/women/Rado_Centrix_Ladies.jpg",
+                "./img/women/10.png",
+                "./img/women/10_side.png"
+            ],
+            "topShow": false,
+            "description": "A delicate quartz watch offering a classic look and reliable performance."
         },
         {
             "product_id": "C001",
@@ -110,7 +218,18 @@
             "discount": 10,
             "gender": "men",
             "company": "Citizen",
-            "image_url": "./img/men/Citizen_Eco-Drive_Chronograph.jpg"
+            "rating": "4.3",
+            "numRatings": "1800",
+            "isNew": false,
+            "image_url": "./img/menwatch/top6.png",
+            "sideImg_url": "./img/menwatch/top6-1.png",
+            "images": [
+                "./img/men/Citizen_Eco-Drive_Chronograph.jpg",
+                "./img/men/Citizen_Eco-Drive_Chronograph_side.jpg",
+                "./img/men/Citizen_Eco-Drive_Chronograph_3.jpg"
+            ],
+            "topShow": true,
+            "description": "The Citizen Eco-Drive Chronograph combines precision timing with a sleek design and eco-friendly technology."
         },
         {
             "product_id": "C002",
@@ -120,7 +239,18 @@
             "discount": 15,
             "gender": "men",
             "company": "Citizen",
-            "image_url": "./img/men/Citizen_Promaster_Diver.jpg"
+            "rating": "4.7",
+            "numRatings": "2200",
+            "isNew": true,
+            "image_url": "./img/menwatch/top7.png",
+            "sideImg_url": "./img/menwatch/top7-1.png",
+            "images": [
+                "./img/men/Citizen_Promaster_Diver.jpg",
+                "./img/men/Citizen_Promaster_Diver_side.jpg",
+                "./img/men/Citizen_Promaster_Diver_3.jpg"
+            ],
+            "topShow": true,
+            "description": "The Citizen Promaster Diver is designed for underwater adventures with advanced features and durability."
         },
         {
             "product_id": "C003",
@@ -130,7 +260,18 @@
             "discount": 5,
             "gender": "men",
             "company": "Citizen",
-            "image_url": "./img/men/Citizen_Quartz_Classic.jpg"
+            "rating": "4.0",
+            "numRatings": "1500",
+            "isNew": false,
+            "image_url": "./img/menwatch/top8.png",
+            "sideImg_url": "./img/menwatch/top8-1.png",
+            "images": [
+                "./img/men/Citizen_Quartz_Classic.jpg",
+                "./img/men/Citizen_Quartz_Classic_side.jpg",
+                "./img/men/Citizen_Quartz_Classic_3.jpg"
+            ],
+            "topShow": true,
+            "description": "The Citizen Quartz Classic offers a timeless design with reliable quartz movement, perfect for everyday wear."
         },
         {
             "product_id": "C004",
@@ -140,7 +281,18 @@
             "discount": 20,
             "gender": "men",
             "company": "Citizen",
-            "image_url": "./img/men/Citizen_Eco-Drive_Satellite_Wave.jpg"
+            "rating": "4.8",
+            "numRatings": "900",
+            "isNew": true,
+            "image_url": "./img/men/Citizen_Eco-Drive_Satellite_Wave.jpg",
+            "sideImg_url": "./img/men/Citizen_Eco-Drive_Satellite_Wave_side.jpg",
+            "images": [
+                "./img/men/Citizen_Eco-Drive_Satellite_Wave.jpg",
+                "./img/men/Citizen_Eco-Drive_Satellite_Wave_side.jpg",
+                "./img/men/Citizen_Eco-Drive_Satellite_Wave_3.jpg"
+            ],
+            "topShow": false,
+            "description": "The Citizen Eco-Drive Satellite Wave features advanced satellite timekeeping technology and a sophisticated design."
         },
         {
             "product_id": "C005",
@@ -150,7 +302,18 @@
             "discount": 10,
             "gender": "men",
             "company": "Citizen",
-            "image_url": "./img/men/Citizen_Aqualand.jpg"
+            "rating": "4.4",
+            "numRatings": "1200",
+            "isNew": false,
+            "image_url": "./img/men/Citizen_Aqualand.jpg",
+            "sideImg_url": "./img/men/Citizen_Aqualand_side.jpg",
+            "images": [
+                "./img/men/Citizen_Aqualand.jpg",
+                "./img/men/Citizen_Aqualand_side.jpg",
+                "./img/men/Citizen_Aqualand_3.jpg"
+            ],
+            "topShow": false,
+            "description": "The Citizen Aqualand is designed for deep-sea diving with robust features and a durable build."
         },
         {
             "product_id": "C006",
@@ -160,7 +323,18 @@
             "discount": 15,
             "gender": "women",
             "company": "Citizen",
-            "image_url": "./img/women/Citizen_Eco-Drive_Elegant.jpg"
+            "rating": "4.5",
+            "numRatings": "1100",
+            "isNew": true,
+            "image_url": "./img/women/Citizen_Eco-Drive_Elegant.jpg",
+            "sideImg_url": "./img/women/Citizen_Eco-Drive_Elegant_side.jpg",
+            "images": [
+                "./img/women/Citizen_Eco-Drive_Elegant.jpg",
+                "./img/women/Citizen_Eco-Drive_Elegant_side.jpg",
+                "./img/women/Citizen_Eco-Drive_Elegant_3.jpg"
+            ],
+            "topShow": false,
+            "description": "The Citizen Eco-Drive Elegant combines a refined design with solar-powered technology for a stylish accessory."
         },
         {
             "product_id": "C007",
@@ -170,7 +344,18 @@
             "discount": 10,
             "gender": "women",
             "company": "Citizen",
-            "image_url": "./img/women/Citizen_L_Sunrise.jpg"
+            "rating": "4.2",
+            "numRatings": "800",
+            "isNew": false,
+            "image_url": "./img/women/Citizen_L_Sunrise.jpg",
+            "sideImg_url": "./img/women/Citizen_L_Sunrise_side.jpg",
+            "images": [
+                "./img/women/Citizen_L_Sunrise.jpg",
+                "./img/women/Citizen_L_Sunrise_side.jpg",
+                "./img/women/Citizen_L_Sunrise_3.jpg"
+            ],
+            "topShow": false,
+            "description": "The Citizen L Sunrise offers a delicate design with reliable quartz movement, ideal for everyday elegance."
         },
         {
             "product_id": "C008",
@@ -180,7 +365,18 @@
             "discount": 5,
             "gender": "women",
             "company": "Citizen",
-            "image_url": "./img/women/Citizen_Eco-Drive_Silhouette.jpg"
+            "rating": "4.3",
+            "numRatings": "950",
+            "isNew": true,
+            "image_url": "./img/women/Citizen_Eco-Drive_Silhouette.jpg",
+            "sideImg_url": "./img/women/Citizen_Eco-Drive_Silhouette_side.jpg",
+            "images": [
+                "./img/women/Citizen_Eco-Drive_Silhouette.jpg",
+                "./img/women/Citizen_Eco-Drive_Silhouette_side.jpg",
+                "./img/women/Citizen_Eco-Drive_Silhouette_3.jpg"
+            ],
+            "topShow": false,
+            "description": "The Citizen Eco-Drive Silhouette features a minimalist design with the precision of quartz technology."
         },
         {
             "product_id": "C009",
@@ -190,7 +386,18 @@
             "discount": 20,
             "gender": "women",
             "company": "Citizen",
-            "image_url": "./img/women/Citizen_Eco-Drive_Stellar.jpg"
+            "rating": "4.6",
+            "numRatings": "1300",
+            "isNew": true,
+            "image_url": "./img/women/Citizen_Eco-Drive_Stellar.jpg",
+            "sideImg_url": "./img/women/Citizen_Eco-Drive_Stellar_side.jpg",
+            "images": [
+                "./img/women/Citizen_Eco-Drive_Stellar.jpg",
+                "./img/women/Citizen_Eco-Drive_Stellar_side.jpg",
+                "./img/women/Citizen_Eco-Drive_Stellar_3.jpg"
+            ],
+            "topShow": false,
+            "description": "The Citizen Eco-Drive Stellar offers a stunning design with solar-powered technology for accurate timekeeping."
         },
         {
             "product_id": "C010",
@@ -200,7 +407,18 @@
             "discount": 15,
             "gender": "women",
             "company": "Citizen",
-            "image_url": "./img/women/Citizen_Exceed.jpg"
+            "rating": "4.4",
+            "numRatings": "950",
+            "isNew": false,
+            "image_url": "./img/women/Citizen_Exceed.jpg",
+            "sideImg_url": "./img/women/Citizen_Exceed_side.jpg",
+            "images": [
+                "./img/women/Citizen_Exceed.jpg",
+                "./img/women/Citizen_Exceed_side.jpg",
+                "./img/women/Citizen_Exceed_3.jpg"
+            ],
+            "topShow": false,
+            "description": "The Citizen Exceed combines sophisticated design with precise quartz movement for a refined timepiece."
         },
         {
             "product_id": "F001",
@@ -210,7 +428,18 @@
             "discount": 10,
             "gender": "men",
             "company": "Fossil",
-            "image_url": "./img/men/Fossil_Grant_Chronograph.jpg"
+            "rating": "4.2",
+            "numRatings": "1300",
+            "isNew": false,
+            "image_url": "./img/men/Fossil_Grant_Chronograph.jpg",
+            "sideImg_url": "./img/men/Fossil_Grant_Chronograph_side.jpg",
+            "images": [
+                "./img/men/Fossil_Grant_Chronograph.jpg",
+                "./img/men/Fossil_Grant_Chronograph_side.jpg",
+                "./img/men/Fossil_Grant_Chronograph_3.jpg"
+            ],
+            "topShow": false,
+            "description": "The Fossil Grant Chronograph features a classic design with precise chronograph functionality for modern men."
         },
         {
             "product_id": "F002",
@@ -220,7 +449,18 @@
             "discount": 5,
             "gender": "men",
             "company": "Fossil",
-            "image_url": "./img/men/Fossil_Gen_5_Smartwatch.jpg"
+            "rating": "4.5",
+            "numRatings": "2000",
+            "isNew": true,
+            "image_url": "./img/men/Fossil_Gen_5_Smartwatch.jpg",
+            "sideImg_url": "./img/men/Fossil_Gen_5_Smartwatch_side.jpg",
+            "images": [
+                "./img/men/Fossil_Gen_5_Smartwatch.jpg",
+                "./img/men/Fossil_Gen_5_Smartwatch_side.jpg",
+                "./img/men/Fossil_Gen_5_Smartwatch_3.jpg"
+            ],
+            "topShow": false,
+            "description": "The Fossil Gen 5 Smartwatch offers advanced features with a sleek design, perfect for tech-savvy men."
         },
         {
             "product_id": "F003",
@@ -230,7 +470,18 @@
             "discount": 15,
             "gender": "men",
             "company": "Fossil",
-            "image_url": "./img/men/Fossil_Machine.jpg"
+            "rating": "4.1",
+            "numRatings": "1000",
+            "isNew": false,
+            "image_url": "./img/men/Fossil_Machine.jpg",
+            "sideImg_url": "./img/men/Fossil_Machine_side.jpg",
+            "images": [
+                "./img/men/Fossil_Machine.jpg",
+                "./img/men/Fossil_Machine_side.jpg",
+                "./img/men/Fossil_Machine_3.jpg"
+            ],
+            "topShow": false,
+            "description": "The Fossil Machine is a robust automatic watch with a distinctive design, ideal for enthusiasts."
         },
         {
             "product_id": "F004",
@@ -240,7 +491,18 @@
             "discount": 20,
             "gender": "men",
             "company": "Fossil",
-            "image_url": "./img/men/Fossil_Townsman.jpg"
+            "rating": "4.3",
+            "numRatings": "1400",
+            "isNew": true,
+            "image_url": "./img/men/Fossil_Townsman.jpg",
+            "sideImg_url": "./img/men/Fossil_Townsman_side.jpg",
+            "images": [
+                "./img/men/Fossil_Townsman.jpg",
+                "./img/men/Fossil_Townsman_side.jpg",
+                "./img/men/Fossil_Townsman_3.jpg"
+            ],
+            "topShow": false,
+            "description": "The Fossil Townsman offers a sophisticated look with reliable quartz movement, perfect for any occasion."
         },
         {
             "product_id": "F005",
@@ -250,7 +512,18 @@
             "discount": 10,
             "gender": "men",
             "company": "Fossil",
-            "image_url": "./img/men/Fossil_Minimalist.jpg"
+            "rating": "4.0",
+            "numRatings": "900",
+            "isNew": false,
+            "image_url": "./img/men/Fossil_Minimalist.jpg",
+            "sideImg_url": "./img/men/Fossil_Minimalist_side.jpg",
+            "images": [
+                "./img/men/Fossil_Minimalist.jpg",
+                "./img/men/Fossil_Minimalist_side.jpg",
+                "./img/men/Fossil_Minimalist_3.jpg"
+            ],
+            "topShow": false,
+            "description": "The Fossil Minimalist delivers a sleek and clean design with dependable quartz accuracy."
         },
         {
             "product_id": "F006",
@@ -260,7 +533,18 @@
             "discount": 15,
             "gender": "women",
             "company": "Fossil",
-            "image_url": "./img/women/Fossil_Jacqueline.jpg"
+            "rating": "4.4",
+            "numRatings": "1100",
+            "isNew": true,
+            "image_url": "./img/women/Fossil_Jacqueline.jpg",
+            "sideImg_url": "./img/women/Fossil_Jacqueline_side.jpg",
+            "images": [
+                "./img/women/Fossil_Jacqueline.jpg",
+                "./img/women/Fossil_Jacqueline_side.jpg",
+                "./img/women/Fossil_Jacqueline_3.jpg"
+            ],
+            "topShow": false,
+            "description": "The Fossil Jacqueline combines elegance with quartz precision, designed for the modern woman."
         },
         {
             "product_id": "F007",
@@ -270,7 +554,18 @@
             "discount": 5,
             "gender": "women",
             "company": "Fossil",
-            "image_url": "./img/women/Fossil_Q_Venture_HR.jpg"
+            "rating": "4.6",
+            "numRatings": "1500",
+            "isNew": true,
+            "image_url": "./img/women/Fossil_Q_Venture_HR.jpg",
+            "sideImg_url": "./img/women/Fossil_Q_Venture_HR_side.jpg",
+            "images": [
+                "./img/women/Fossil_Q_Venture_HR.jpg",
+                "./img/women/Fossil_Q_Venture_HR_side.jpg",
+                "./img/women/Fossil_Q_Venture_HR_3.jpg"
+            ],
+            "topShow": false,
+            "description": "The Fossil Q Venture HR smartwatch offers cutting-edge features with a fashionable design, tailored for women."
         },
         {
             "product_id": "F008",
@@ -280,7 +575,18 @@
             "discount": 20,
             "gender": "women",
             "company": "Fossil",
-            "image_url": "./img/women/Fossil_Riley_Multifunction.jpg"
+            "rating": "4.3",
+            "numRatings": "950",
+            "isNew": false,
+            "image_url": "./img/women/Fossil_Riley_Multifunction.jpg",
+            "sideImg_url": "./img/women/Fossil_Riley_Multifunction_side.jpg",
+            "images": [
+                "./img/women/Fossil_Riley_Multifunction.jpg",
+                "./img/women/Fossil_Riley_Multifunction_side.jpg",
+                "./img/women/Fossil_Riley_Multifunction_3.jpg"
+            ],
+            "topShow": false,
+            "description": "The Fossil Riley Multifunction watch offers versatile features with a chic design, ideal for everyday wear."
         },
         {
             "product_id": "F009",
@@ -290,7 +596,18 @@
             "discount": 10,
             "gender": "women",
             "company": "Fossil",
-            "image_url": "./img/women/Fossil_Esme.jpg"
+            "rating": "4.2",
+            "numRatings": "800",
+            "isNew": false,
+            "image_url": "./img/women/Fossil_Esme.jpg",
+            "sideImg_url": "./img/women/Fossil_Esme_side.jpg",
+            "images": [
+                "./img/women/Fossil_Esme.jpg",
+                "./img/women/Fossil_Esme_side.jpg",
+                "./img/women/Fossil_Esme_3.jpg"
+            ],
+            "topShow": false,
+            "description": "The Fossil Esme is a stylish quartz watch with a touch of sophistication, perfect for various occasions."
         },
         {
             "product_id": "F010",
@@ -300,7 +617,18 @@
             "discount": 5,
             "gender": "women",
             "company": "Fossil",
-            "image_url": "./img/women/Fossil_Georgia.jpg"
+            "rating": "4.1",
+            "numRatings": "750",
+            "isNew": false,
+            "image_url": "./img/women/Fossil_Georgia.jpg",
+            "sideImg_url": "./img/women/Fossil_Georgia_side.jpg",
+            "images": [
+                "./img/women/Fossil_Georgia.jpg",
+                "./img/women/Fossil_Georgia_side.jpg",
+                "./img/women/Fossil_Georgia_3.jpg"
+            ],
+            "topShow": false,
+            "description": "The Fossil Georgia offers a classic look with quartz accuracy, making it a versatile addition to any wardrobe."
         },
         {
             "product_id": "A001",
@@ -310,7 +638,18 @@
             "discount": 10,
             "gender": "men",
             "company": "Armani Exchange",
-            "image_url": "./img/men/Armani_Exchange_Chronograph.jpg"
+            "rating": "4.4",
+            "numRatings": "1200",
+            "isNew": false,
+            "image_url": "./img/men/Armani_Exchange_Chronograph.jpg",
+            "sideImg_url": "./img/men/Armani_Exchange_Chronograph_side.jpg",
+            "images": [
+                "./img/men/Armani_Exchange_Chronograph.jpg",
+                "./img/men/Armani_Exchange_Chronograph_side.jpg",
+                "./img/men/Armani_Exchange_Chronograph_3.jpg"
+            ],
+            "topShow": false,
+            "description": "The Armani Exchange Chronograph combines a sporty design with precise chronograph functionality, perfect for active men."
         },
         {
             "product_id": "A002",
@@ -320,7 +659,18 @@
             "discount": 15,
             "gender": "men",
             "company": "Armani Exchange",
-            "image_url": "./img/men/Armani_Exchange_Diver.jpg"
+            "rating": "4.3",
+            "numRatings": "1000",
+            "isNew": true,
+            "image_url": "./img/men/Armani_Exchange_Diver.jpg",
+            "sideImg_url": "./img/men/Armani_Exchange_Diver_side.jpg",
+            "images": [
+                "./img/men/Armani_Exchange_Diver.jpg",
+                "./img/men/Armani_Exchange_Diver_side.jpg",
+                "./img/men/Armani_Exchange_Diver_3.jpg"
+            ],
+            "topShow": false,
+            "description": "The Armani Exchange Diver offers rugged durability and a classic dive watch design, ideal for underwater adventures."
         },
         {
             "product_id": "A003",
@@ -330,7 +680,18 @@
             "discount": 5,
             "gender": "men",
             "company": "Armani Exchange",
-            "image_url": "./img/men/Armani_Exchange_Minimalist.jpg"
+            "rating": "4.1",
+            "numRatings": "800",
+            "isNew": false,
+            "image_url": "./img/men/Armani_Exchange_Minimalist.jpg",
+            "sideImg_url": "./img/men/Armani_Exchange_Minimalist_side.jpg",
+            "images": [
+                "./img/men/Armani_Exchange_Minimalist.jpg",
+                "./img/men/Armani_Exchange_Minimalist_side.jpg",
+                "./img/men/Armani_Exchange_Minimalist_3.jpg"
+            ],
+            "topShow": false,
+            "description": "The Armani Exchange Minimalist is designed for simplicity and elegance, offering a sleek quartz watch experience."
         },
         {
             "product_id": "A004",
@@ -340,7 +701,18 @@
             "discount": 20,
             "gender": "men",
             "company": "Armani Exchange",
-            "image_url": "./img/men/Armani_Exchange_Automatic.jpg"
+            "rating": "4.5",
+            "numRatings": "1500",
+            "isNew": true,
+            "image_url": "./img/men/Armani_Exchange_Automatic.jpg",
+            "sideImg_url": "./img/men/Armani_Exchange_Automatic_side.jpg",
+            "images": [
+                "./img/men/Armani_Exchange_Automatic.jpg",
+                "./img/men/Armani_Exchange_Automatic_side.jpg",
+                "./img/men/Armani_Exchange_Automatic_3.jpg"
+            ],
+            "topShow": false,
+            "description": "The Armani Exchange Automatic offers sophisticated craftsmanship with an automatic movement, perfect for watch enthusiasts."
         },
         {
             "product_id": "A005",
@@ -350,7 +722,18 @@
             "discount": 10,
             "gender": "men",
             "company": "Armani Exchange",
-            "image_url": "./img/men/Armani_Exchange_Smartwatch.jpg"
+            "rating": "4.6",
+            "numRatings": "2000",
+            "isNew": true,
+            "image_url": "./img/men/Armani_Exchange_Smartwatch.jpg",
+            "sideImg_url": "./img/men/Armani_Exchange_Smartwatch_side.jpg",
+            "images": [
+                "./img/men/Armani_Exchange_Smartwatch.jpg",
+                "./img/men/Armani_Exchange_Smartwatch_side.jpg",
+                "./img/men/Armani_Exchange_Smartwatch_3.jpg"
+            ],
+            "topShow": false,
+            "description": "The Armani Exchange Smartwatch combines modern technology with stylish design, featuring advanced smart features."
         },
         {
             "product_id": "A006",
@@ -360,7 +743,18 @@
             "discount": 15,
             "gender": "women",
             "company": "Armani Exchange",
-            "image_url": "./img/women/Armani_Exchange_Logo_Watch.jpg"
+            "rating": "4.2",
+            "numRatings": "900",
+            "isNew": false,
+            "image_url": "./img/women/Armani_Exchange_Logo_Watch.jpg",
+            "sideImg_url": "./img/women/Armani_Exchange_Logo_Watch_side.jpg",
+            "images": [
+                "./img/women/Armani_Exchange_Logo_Watch.jpg",
+                "./img/women/Armani_Exchange_Logo_Watch_side.jpg",
+                "./img/women/Armani_Exchange_Logo_Watch_3.jpg"
+            ],
+            "topShow": false,
+            "description": "The Armani Exchange Logo Watch features a bold logo design with reliable quartz movement, perfect for making a statement."
         },
         {
             "product_id": "A007",
@@ -370,7 +764,18 @@
             "discount": 10,
             "gender": "women",
             "company": "Armani Exchange",
-            "image_url": "./img/women/Armani_Exchange_Silver_Mesh.jpg"
+            "rating": "4.3",
+            "numRatings": "950",
+            "isNew": true,
+            "image_url": "./img/women/Armani_Exchange_Silver_Mesh.jpg",
+            "sideImg_url": "./img/women/Armani_Exchange_Silver_Mesh_side.jpg",
+            "images": [
+                "./img/women/Armani_Exchange_Silver_Mesh.jpg",
+                "./img/women/Armani_Exchange_Silver_Mesh_side.jpg",
+                "./img/women/Armani_Exchange_Silver_Mesh_3.jpg"
+            ],
+            "topShow": false,
+            "description": "The Armani Exchange Silver Mesh offers a sleek design with a comfortable mesh band and precise quartz movement."
         },
         {
             "product_id": "A008",
@@ -380,7 +785,18 @@
             "discount": 20,
             "gender": "women",
             "company": "Armani Exchange",
-            "image_url": "./img/women/Armani_Exchange_Rose_Gold.jpg"
+            "rating": "4.4",
+            "numRatings": "1100",
+            "isNew": true,
+            "image_url": "./img/women/Armani_Exchange_Rose_Gold.jpg",
+            "sideImg_url": "./img/women/Armani_Exchange_Rose_Gold_side.jpg",
+            "images": [
+                "./img/women/Armani_Exchange_Rose_Gold.jpg",
+                "./img/women/Armani_Exchange_Rose_Gold_side.jpg",
+                "./img/women/Armani_Exchange_Rose_Gold_3.jpg"
+            ],
+            "topShow": false,
+            "description": "The Armani Exchange Rose Gold watch features a luxurious rose gold finish with a classic quartz movement."
         },
         {
             "product_id": "A009",
@@ -390,7 +806,18 @@
             "discount": 5,
             "gender": "women",
             "company": "Armani Exchange",
-            "image_url": "./img/women/Armani_Exchange_Smartwatch_Ladies.jpg"
+            "rating": "4.5",
+            "numRatings": "1300",
+            "isNew": true,
+            "image_url": "./img/women/Armani_Exchange_Smartwatch_Ladies.jpg",
+            "sideImg_url": "./img/women/Armani_Exchange_Smartwatch_Ladies_side.jpg",
+            "images": [
+                "./img/women/Armani_Exchange_Smartwatch_Ladies.jpg",
+                "./img/women/Armani_Exchange_Smartwatch_Ladies_side.jpg",
+                "./img/women/Armani_Exchange_Smartwatch_Ladies_3.jpg"
+            ],
+            "topShow": false,
+            "description": "The Armani Exchange Smartwatch Ladies offers a blend of advanced features with a stylish design tailored for women."
         },
         {
             "product_id": "A010",
@@ -400,7 +827,18 @@
             "discount": 10,
             "gender": "women",
             "company": "Armani Exchange",
-            "image_url": "./img/women/Armani_Exchange_Minimalist_Rose_Gold.jpg"
+            "rating": "4.3",
+            "numRatings": "850",
+            "isNew": false,
+            "image_url": "./img/women/Armani_Exchange_Minimalist_Rose_Gold.jpg",
+            "sideImg_url": "./img/women/Armani_Exchange_Minimalist_Rose_Gold_side.jpg",
+            "images": [
+                "./img/women/Armani_Exchange_Minimalist_Rose_Gold.jpg",
+                "./img/women/Armani_Exchange_Minimalist_Rose_Gold_side.jpg",
+                "./img/women/Armani_Exchange_Minimalist_Rose_Gold_3.jpg"
+            ],
+            "topShow": false,
+            "description": "The Armani Exchange Minimalist Rose Gold features a refined rose gold design with a minimalist quartz movement for a sophisticated look."
         },
         {
             "product_id": "O001",
@@ -410,7 +848,18 @@
             "discount": 10,
             "gender": "men",
             "company": "Omega",
-            "image_url": "./img/men/Omega_Seamaster_Diver.jpg"
+            "rating": "4.8",
+            "numRatings": "1800",
+            "isNew": false,
+            "image_url": "./img/men/Omega_Seamaster_Diver.jpg",
+            "sideImg_url": "./img/men/Omega_Seamaster_Diver_side.jpg",
+            "images": [
+                "./img/men/Omega_Seamaster_Diver.jpg",
+                "./img/men/Omega_Seamaster_Diver_side.jpg",
+                "./img/men/Omega_Seamaster_Diver_3.jpg"
+            ],
+            "topShow": false,
+            "description": "The Omega Seamaster Diver is renowned for its robust build and exceptional underwater capabilities, designed for the serious diver."
         },
         {
             "product_id": "O002",
@@ -420,7 +869,18 @@
             "discount": 5,
             "gender": "men",
             "company": "Omega",
-            "image_url": "./img/men/Omega_Speedmaster_Professional.jpg"
+            "rating": "4.7",
+            "numRatings": "2000",
+            "isNew": true,
+            "image_url": "./img/men/Omega_Speedmaster_Professional.jpg",
+            "sideImg_url": "./img/men/Omega_Speedmaster_Professional_side.jpg",
+            "images": [
+                "./img/men/Omega_Speedmaster_Professional.jpg",
+                "./img/men/Omega_Speedmaster_Professional_side.jpg",
+                "./img/men/Omega_Speedmaster_Professional_3.jpg"
+            ],
+            "topShow": false,
+            "description": "The Omega Speedmaster Professional is celebrated for its precision and history as the first watch on the moon, featuring a classic chronograph design."
         },
         {
             "product_id": "O003",
@@ -430,7 +890,18 @@
             "discount": 15,
             "gender": "men",
             "company": "Omega",
-            "image_url": "./img/men/Omega_Constellation.jpg"
+            "rating": "4.6",
+            "numRatings": "1600",
+            "isNew": false,
+            "image_url": "./img/men/Omega_Constellation.jpg",
+            "sideImg_url": "./img/men/Omega_Constellation_side.jpg",
+            "images": [
+                "./img/men/Omega_Constellation.jpg",
+                "./img/men/Omega_Constellation_side.jpg",
+                "./img/men/Omega_Constellation_3.jpg"
+            ],
+            "topShow": false,
+            "description": "The Omega Constellation offers a timeless quartz design with stellar accuracy and a prestigious name."
         },
         {
             "product_id": "O004",
@@ -440,7 +911,18 @@
             "discount": 20,
             "gender": "men",
             "company": "Omega",
-            "image_url": "./img/men/Omega_De_Ville.jpg"
+            "rating": "4.5",
+            "numRatings": "1400",
+            "isNew": true,
+            "image_url": "./img/men/Omega_De_Ville.jpg",
+            "sideImg_url": "./img/men/Omega_De_Ville_side.jpg",
+            "images": [
+                "./img/men/Omega_De_Ville.jpg",
+                "./img/men/Omega_De_Ville_side.jpg",
+                "./img/men/Omega_De_Ville_3.jpg"
+            ],
+            "topShow": false,
+            "description": "The Omega De Ville is a refined automatic watch with elegant design and exceptional craftsmanship."
         },
         {
             "product_id": "O005",
@@ -450,7 +932,18 @@
             "discount": 12,
             "gender": "men",
             "company": "Omega",
-            "image_url": "./img/men/Omega_Seamaster_Aqua_Terra.jpg"
+            "rating": "4.7",
+            "numRatings": "1700",
+            "isNew": false,
+            "image_url": "./img/men/Omega_Seamaster_Aqua_Terra.jpg",
+            "sideImg_url": "./img/men/Omega_Seamaster_Aqua_Terra_side.jpg",
+            "images": [
+                "./img/men/Omega_Seamaster_Aqua_Terra.jpg",
+                "./img/men/Omega_Seamaster_Aqua_Terra_side.jpg",
+                "./img/men/Omega_Seamaster_Aqua_Terra_3.jpg"
+            ],
+            "topShow": false,
+            "description": "The Omega Seamaster Aqua Terra blends sporty functionality with a sophisticated automatic movement, ideal for both land and sea."
         },
         {
             "product_id": "O006",
@@ -460,7 +953,18 @@
             "discount": 10,
             "gender": "women",
             "company": "Omega",
-            "image_url": "./img/women/Omega_Constellation_Ladies.jpg"
+            "rating": "4.4",
+            "numRatings": "1300",
+            "isNew": true,
+            "image_url": "./img/women/Omega_Constellation_Ladies.jpg",
+            "sideImg_url": "./img/women/Omega_Constellation_Ladies_side.jpg",
+            "images": [
+                "./img/women/Omega_Constellation_Ladies.jpg",
+                "./img/women/Omega_Constellation_Ladies_side.jpg",
+                "./img/women/Omega_Constellation_Ladies_3.jpg"
+            ],
+            "topShow": false,
+            "description": "The Omega Constellation Ladies is a beautiful quartz watch offering elegance and accuracy with a touch of luxury."
         },
         {
             "product_id": "O007",
@@ -470,7 +974,18 @@
             "discount": 15,
             "gender": "women",
             "company": "Omega",
-            "image_url": "./img/women/Omega_De_Ville_Prestige.jpg"
+            "rating": "4.6",
+            "numRatings": "1200",
+            "isNew": true,
+            "image_url": "./img/women/Omega_De_Ville_Prestige.jpg",
+            "sideImg_url": "./img/women/Omega_De_Ville_Prestige_side.jpg",
+            "images": [
+                "./img/women/Omega_De_Ville_Prestige.jpg",
+                "./img/women/Omega_De_Ville_Prestige_side.jpg",
+                "./img/women/Omega_De_Ville_Prestige_3.jpg"
+            ],
+            "topShow": false,
+            "description": "The Omega De Ville Prestige is a sophisticated quartz watch known for its luxurious design and precision."
         },
         {
             "product_id": "O008",
@@ -480,7 +995,18 @@
             "discount": 20,
             "gender": "women",
             "company": "Omega",
-            "image_url": "./img/women/Omega_Seamaster_Diver_300M.jpg"
+            "rating": "4.8",
+            "numRatings": "1500",
+            "isNew": false,
+            "image_url": "./img/women/Omega_Seamaster_Diver_300M.jpg",
+            "sideImg_url": "./img/women/Omega_Seamaster_Diver_300M_side.jpg",
+            "images": [
+                "./img/women/Omega_Seamaster_Diver_300M.jpg",
+                "./img/women/Omega_Seamaster_Diver_300M_side.jpg",
+                "./img/women/Omega_Seamaster_Diver_300M_3.jpg"
+            ],
+            "topShow": false,
+            "description": "The Omega Seamaster Diver 300M for women offers superior water resistance and a stylish design, perfect for diving and everyday wear."
         },
         {
             "product_id": "O009",
@@ -490,7 +1016,18 @@
             "discount": 10,
             "gender": "women",
             "company": "Omega",
-            "image_url": "./img/women/Omega_Speedmaster_Moonwatch.jpg"
+            "rating": "4.7",
+            "numRatings": "1700",
+            "isNew": true,
+            "image_url": "./img/women/Omega_Speedmaster_Moonwatch.jpg",
+            "sideImg_url": "./img/women/Omega_Speedmaster_Moonwatch_side.jpg",
+            "images": [
+                "./img/women/Omega_Speedmaster_Moonwatch.jpg",
+                "./img/women/Omega_Speedmaster_Moonwatch_side.jpg",
+                "./img/women/Omega_Speedmaster_Moonwatch_3.jpg"
+            ],
+            "topShow": false,
+            "description": "The Omega Speedmaster Moonwatch is a legendary chronograph known for its space exploration history and elegant design."
         },
         {
             "product_id": "O010",
@@ -500,7 +1037,18 @@
             "discount": 5,
             "gender": "women",
             "company": "Omega",
-            "image_url": "./img/women/Omega_Seamaster_Aqua_Terra_Ladies.jpg"
+            "rating": "4.5",
+            "numRatings": "1400",
+            "isNew": false,
+            "image_url": "./img/women/Omega_Seamaster_Aqua_Terra_Ladies.jpg",
+            "sideImg_url": "./img/women/Omega_Seamaster_Aqua_Terra_Ladies_side.jpg",
+            "images": [
+                "./img/women/Omega_Seamaster_Aqua_Terra_Ladies.jpg",
+                "./img/women/Omega_Seamaster_Aqua_Terra_Ladies_side.jpg",
+                "./img/women/Omega_Seamaster_Aqua_Terra_Ladies_3.jpg"
+            ],
+            "topShow": false,
+            "description": "The Omega Seamaster Aqua Terra Ladies combines elegant design with automatic precision, perfect for refined tastes."
         }
     ]
 }

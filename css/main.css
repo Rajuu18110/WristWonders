@@ -1,6 +1,22 @@
 .tryborder{
     border: 3px solid black;
 }
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: none;
+    z-index: 1000;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+}
+#backToTop img {
+    width: 50px; /* Adjust the size as needed */
+    height: 50px; /* Adjust the size as needed */
+}
+
 .topSellImg{
     position: relative;
     width: max-content;

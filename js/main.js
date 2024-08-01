@@ -50,7 +50,6 @@ function updateNavbar() {
         `;
 
         const logoutButton = document.getElementById('logoutButton');
-        console.log(logoutButton);
         logoutButton.addEventListener('click', function () {
             localStorage.removeItem('loggedIn');
             window.location.href = 'index.html'; // Redirect to login page
@@ -61,8 +60,27 @@ function updateNavbar() {
         `;
     }
 }
-// Logout functionality
+// // back to top
+// document.addEventListener('DOMContentLoaded', () => {
+//     const backToTopButton = document.getElementById('backToTop');
 
+//     // Show the button when scrolling down
+//     window.addEventListener('scroll', () => {
+//         if (window.scrollY > 300) { // Show button after scrolling down 300px
+//             backToTopButton.style.display = 'block';
+//         } else {
+//             backToTopButton.style.display = 'none';
+//         }
+//     });
+
+//     // Scroll to top when button is clicked
+//     backToTopButton.addEventListener('click', () => {
+//         window.scrollTo({
+//             top: 0,
+//             behavior: 'smooth'
+//         });
+//     });
+// });
 
 let itemstopSellSlide = document.querySelectorAll('.carousel .carousel-item.topSellSlide')
 

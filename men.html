@@ -28,31 +28,27 @@
         }
 
         .star-rating i {
-            color: gold;
+            color: #f39c12;
             font-size: 1.2rem;
         }
 
         .star-rating i.bi-star-half {
-            color: gold;
+            color: #f39c12;
         }
 
         .star-rating i.bi-star {
             color: lightgray;
         }
 
-        .filter-section {
-            position: sticky;
-            /* Makes the element sticky */
-            top: 0;
-            /* Sets the distance from the top of the viewport */
-            height: 100vh;
-            /* Full height of the viewport */
-            overflow-y: auto;
-            /* Enables vertical scrolling within the filter menu if needed */
-            background-color: #f8f9fa;
-            /* Optional: Set a background color to distinguish the sticky menu */
-            padding: 15px;
-            /* Optional: Add padding for better spacing */
+        @media (min-width: 768px) {
+            .filter-section {
+                position: sticky;
+                top: 0;
+                height: 100vh;
+                overflow-y: auto;
+                background-color: #f8f9fa;
+                padding: 15px;
+            }
         }
     </style>
 </head>
@@ -62,6 +58,11 @@
     <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary" id="navbar"
         style="background-color: #ffffff !important;">
     </nav>
+
+    <!-- Back to Top Button -->
+    <button class="btn btn-primary" id="backToTop" title="Back to Top">
+        <img src="./img/logo/rotateClockColor.gif" alt="Back to Top">
+    </button>
 
     <div class="container-fluid">
         <div class="row">
@@ -322,7 +323,11 @@
 
             // Event listener for toggle filter button
             toggleFilter.addEventListener('click', () => {
-                filterSection.classList.toggle('d-none');
+                if (filterSection.style.display === 'none' || filterSection.style.display === '') {
+                    filterSection.style.display = 'block';
+                } else {
+                    filterSection.style.display = 'none';
+                }
             });
 
             // Event listener for clear filters button

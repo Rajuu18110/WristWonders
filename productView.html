@@ -7,6 +7,7 @@
     <title>WatchWonders - Product View</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <style>
         .product-image {
             max-width: 100%;
@@ -18,31 +19,42 @@
         }
 
         .quantity-input {
-            width: 60px;
+            width: 80px;
+        }
+
+        .rating {
+            color: #f39c12;
+        }
+
+        .discounted-price {
+            color: #28a745;
+            font-weight: bold;
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <div id="loadNav">
+    <nav id="loadNav"></nav>
 
-        </div>
+    <div class="container mt-5">
         <div class="row">
             <div class="col-md-6">
-                <img id="productImage" class="product-image" src="" alt="Product Image">
+                <img id="productImage" class="product-image img-fluid rounded" src="" alt="Product Image">
             </div>
             <div class="col-md-6 product-details">
-                <h2 id="productName"></h2>
-                <h4 id="productBrand"></h4>
-                <p id="productDescription"></p>
-                <h4 id="productPrice"></h4>
-                <h4 id="productDiscountedPrice" class="text-success"></h4>
-                <div class="d-flex align-items-center">
+                <h2 id="productName" class="display-4"></h2>
+                <h4 id="productBrand" class="text-muted"></h4>
+                <p id="productDescription" class="text-secondary"></p>
+                <h4 id="productPrice" class="text-primary"></h4>
+                <h4 id="productDiscountedPrice" class="discounted-price"></h4>
+                <p id="productGender" class="font-weight-bold"></p>
+                <div id="productRating" class="rating"></div>
+                <p id="productNumRatings"></p>
+                <div class="d-flex align-items-center mb-3">
                     <label for="quantity" class="me-2">Quantity:</label>
                     <input type="number" id="quantity" class="form-control quantity-input" value="1" min="1">
                 </div>
-                <button id="addToCartButton" class="btn btn-primary mt-3">Add to Cart</button>
+                <button id="addToCartButton" class="btn btn-primary btn-lg">Add to Cart</button>
             </div>
         </div>
     </div>
@@ -57,7 +69,7 @@
                 const urlParams = new URLSearchParams(window.location.search);
                 return urlParams.get(param);
             }
-        
+
             // Function to load product data
             async function loadProduct(productId) {
                 try {
@@ -70,7 +82,7 @@
                     return null;
                 }
             }
-        
+
             // Function to display product data
             function displayProduct(product) {
                 if (product) {
@@ -80,22 +92,39 @@
                     const productDescription = document.getElementById('productDescription');
                     const productPrice = document.getElementById('productPrice');
                     const productDiscountedPrice = document.getElementById('productDiscountedPrice');
+                    const productGender = document.getElementById('productGender');
+                    const productRating = document.getElementById('productRating');
+                    const productNumRatings = document.getElementById('productNumRatings');
                     const addToCartButton = document.getElementById('addToCartButton');
                     const quantityInput = document.getElementById('quantity');
-        
+                    const rating = product.rating || 0; // Assuming product.rating is a number between 0 and 5
+                    const numRatings = product.numRatings || 0; // Number of people who rated
+                    const stars = Array.from({ length: 5 }, (_, index) => {
+                        const isFull = index < Math.floor(rating);
+                        const isHalf = index === Math.floor(rating) && (rating % 1) >= 0.5;
+                            return `
+                                <i class="bi bi-star${isFull ? '-fill' : ''}${isHalf ? '-half' : ''}"></i>
+                            `;
+                        }).join('');
+
                     productImage.src = product.image_url;
                     productName.textContent = product.name;
                     productBrand.textContent = `Brand: ${product.company}`;
                     productDescription.textContent = product.description || 'No description available.';
                     productPrice.textContent = `Price: $${product.price.toFixed(2)}`;
-        
+
                     if (product.discount > 0) {
                         const discountedPrice = product.price - (product.price * (product.discount / 100));
                         productDiscountedPrice.textContent = `Discounted Price: $${discountedPrice.toFixed(2)}`;
                     } else {
                         productDiscountedPrice.textContent = '';
                     }
-        
+
+                    // Display additional product details
+                    productGender.textContent = `Gender: ${product.gender}`;
+                    productRating.innerHTML = stars;
+                    productNumRatings.textContent = `Ratings: ${product.numRatings}`;
+
                     // Add event listener for Add to Cart button
                     addToCartButton.addEventListener('click', () => {
                         const quantity = parseInt(quantityInput.value, 10);
@@ -105,7 +134,7 @@
                     console.error('Product not found.');
                 }
             }
-        
+
             // Function to add item to cart
             function addToCart(name, price, disPrice, image, quantity) {
                 const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -113,7 +142,7 @@
                 localStorage.setItem('cart', JSON.stringify(cart));
                 alert('Item added to cart!');
             }
-        
+
             // Main function
             (async function() {
                 const productId = getQueryParam('name');
@@ -125,8 +154,7 @@
                 }
             })();
         });
-        </script>
-        
+    </script>
 </body>
 
 </html>
