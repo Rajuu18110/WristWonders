@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Information - WatchWonders</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <style>
+        .editinfo-container {
+            max-width: 500px;
+            margin: 50px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navload">
+        <!-- Navbar will be loaded here -->
+    </div>
+    
+    <div class="container editinfo-container">
+        <h1 class="text-center mb-4">Edit Information</h1>
+        <form id="editInfoForm">
+            <div class="mb-3">
+                <label for="firstName" class="form-label">First Name:</label>
+                <input type="text" class="form-control" id="firstName" required>
+            </div>
+            <div class="mb-3">
+                <label for="lastName" class="form-label">Last Name:</label>
+                <input type="text" class="form-control" id="lastName" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password">
+                <small class="form-text text-muted">Leave blank if you don't want to change the password.</small>
+            </div>
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+        </form>
+        <p class="text-center mt-3"><a href="index.html">Back to Home</a></p>
+    </div>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const editInfoForm = document.getElementById('editInfoForm');
+
+            // Check if user is logged in
+            if (localStorage.getItem('loggedIn') !== 'true') {
+                alert('Please log in to access this page.');
+                window.location.href = 'login.html'; // Redirect to login page
+                return;
+            }
+
+            // Load current user information
+            const storedUser = JSON.parse(localStorage.getItem('user'));
+            if (storedUser) {
+                document.getElementById('firstName').value = storedUser.firstName;
+                document.getElementById('lastName').value = storedUser.lastName;
+                document.getElementById('email').value = storedUser.email;
+            }
+
+            // Handle form submission
+            editInfoForm.addEventListener('submit', function (event) {
+                event.preventDefault();
+                const firstName = document.getElementById('firstName').value;
+                const lastName = document.getElementById('lastName').value;
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+
+                const updatedUser = { firstName, lastName, email, password: password || undefined };
+                localStorage.setItem('user', JSON.stringify(updatedUser));
+
+                alert('Information updated successfully!');
+                window.location.href = 'index.html'; // Redirect to home page or wherever appropriate
+            });
+        });
+    </script>
+</body>
+
+</html>

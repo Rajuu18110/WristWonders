@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - WatchWonders</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <style>
+        .cart-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .cart-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            margin-right: 20px;
+            border-radius: 8px;
+        }
+
+        .cart-item h5,
+        .cart-item h6 {
+            margin: 0;
+        }
+
+        .cart-item .quantity-input {
+            width: 60px;
+            margin-left: 20px;
+        }
+
+        .cart-item button {
+            margin-left: auto;
+        }
+
+        .total-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: right;
+            margin-top: 20px;
+        }
+
+        .purchase-button {
+            text-align: right;
+            margin-top: 20px;
+        }
+
+        .card {
+            width: 100%;
+        }
+
+        .table th, .table td {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body class="bg-black">
+    <!-- Navbar will be loaded here -->
+    <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary" id="navbar" style="background-color: #ffffff !important;"></nav>
+
+    <div class="container-fluid px-5">
+        <h1 class="text-center text-white my-4">Shopping Cart</h1>
+        <div class="row">
+            <!-- Cart Items -->
+            <div class="col-md-8">
+                <div id="cartItems">
+                    <!-- Cart items will be inserted here dynamically -->
+                </div>
+            </div>
+            <!-- Cart Summary -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Cart Summary</h3>
+                        <hr>
+                        <div id="cartSummary">
+                            <!-- Cart summary table will be inserted here dynamically -->
+                        </div>
+                        <div id="totalPrice" class="total-price">$0.00</div>
+                        <div class="purchase-button">
+                            <button class="btn btn-success btn-lg" id="purchaseButton">Purchase</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts at the end of body for better performance -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cartItemsContainer = document.getElementById('cartItems');
+            const cartSummaryElement = document.getElementById('cartSummary');
+            const totalPriceElement = document.getElementById('totalPrice');
+            const purchaseButton = document.getElementById('purchaseButton');
+
+            function loadCartItems() {
+                return JSON.parse(localStorage.getItem('cart')) || [];
+            }
+
+            function saveCartItems(cart) {
+                localStorage.setItem('cart', JSON.stringify(cart));
+            }
+
+            function createCartItemElement(item) {
+                const cartItem = document.createElement('div');
+                const displayDis = item.price > item.disPrice;
+                cartItem.className = 'cart-item';
+
+                cartItem.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}">
+                    <div>
+                        <h5>${item.name}</h5>
+                        ${displayDis ? `
+                            <h6>Price: <span class="text-muted"><s>$${item.price.toFixed(2)}</s></span></h6>
+                            <h6>Discounted Price: $${item.disPrice.toFixed(2)}</h6>
+                        ` : `
+                            <h6>Price: $${item.price.toFixed(2)}</h6>
+                        `}
+                        <div class="d-flex align-items-center">
+                            <label for="quantity-${item.name}" class="me-2">Quantity:</label>
+                            <input type="number" id="quantity-${item.name}" class="form-control quantity-input" value="${item.quantity}" min="1">
+                        </div>
+                    </div>
+                    <button class="btn btn-danger btn-sm remove-item" data-name="${item.name}">Remove</button>
+                `;
+
+                cartItem.querySelector('.quantity-input').addEventListener('change', (event) => {
+                    updateCartItemQuantity(item.name, parseInt(event.target.value));
+                });
+
+                cartItem.querySelector('.remove-item').addEventListener('click', () => {
+                    removeCartItem(item.name);
+                });
+
+                return cartItem;
+            }
+
+            function renderCartItems() {
+                const cartItems = loadCartItems();
+                cartItemsContainer.innerHTML = '';
+                cartItems.forEach(item => {
+                    const cartItemElement = createCartItemElement(item);
+                    cartItemsContainer.appendChild(cartItemElement);
+                });
+                updateCartSummary();
+            }
+
+            function updateCartItemQuantity(name, quantity) {
+                let cart = loadCartItems();
+                const item = cart.find(item => item.name === name);
+                if (item) {
+                    item.quantity = quantity;
+                }
+                saveCartItems(cart);
+                updateCartSummary();
+            }
+
+            function removeCartItem(name) {
+                let cart = loadCartItems();
+                cart = cart.filter(item => item.name !== name);
+                saveCartItems(cart);
+                renderCartItems();
+            }
+
+            function updateCartSummary() {
+                const cartItems = loadCartItems();
+                cartSummaryElement.innerHTML = `
+                    <table class="table text-white">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Product Name</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${cartItems.map((item, index) => `
+                                <tr>
+                                    <td>${index + 1}</td>
+                                    <td>${item.name}</td>
+                                    <td>${item.quantity}</td>
+                                    <td>$${(item.disPrice * item.quantity).toFixed(2)}</td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                `;
+
+                const totalPrice = cartItems.reduce((total, item) => total + (item.disPrice * item.quantity), 0);
+                totalPriceElement.textContent = `Total: $${totalPrice.toFixed(2)}`;
+            }
+
+            function handlePurchase() {
+                const cartItems = loadCartItems();
+                if (cartItems.length === 0) {
+                    alert('Your cart is empty.');
+                    return;
+                }
+
+                // Simulate the payment process
+                alert('Thank you for your purchase!');
+
+                // Store order history
+                const orderHistory = JSON.parse(localStorage.getItem('orderHistory')) || [];
+                const newOrder = {
+                    date: new Date().toLocaleString(),
+                    items: cartItems.map(item => ({
+                        name: item.name,
+                        quantity: item.quantity
+                    })),
+                    totalAmount: cartItems.reduce((total, item) => total + (item.disPrice * item.quantity), 0)
+                };
+                orderHistory.push(newOrder);
+                localStorage.setItem('orderHistory', JSON.stringify(orderHistory));
+
+                // Clear the cart after purchase
+                saveCartItems([]);
+                renderCartItems();
+
+                // Redirect to the orders page
+                window.location.href = './index.html';
+            }
+
+            purchaseButton.addEventListener('click', handlePurchase);
+
+            renderCartItems();
+        });
+    </script>
+</body>
+
+</html>
