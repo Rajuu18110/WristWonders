@@ -12,15 +12,19 @@
 <body>
     <!-- Navbar will be loaded here -->
     <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary" id="navbar"
-        style="background-color: #ffffff !important;">
+        style="background-color: #000000 !important;">
     </nav>
 
-    <div class="container-fluid pt-3 px-5">
+    <div class="container-fluid pt-3 px-5" style="min-height: 400px;">
         <h1 class="text-center mb-4">Order History</h1>
         <div id="orderHistory">
             <!-- Order history will be displayed here -->
         </div>
     </div>
+
+    <!-- footer -->
+    <footer class="footer px-5 py-3 bg-black" id="footer">
+    </footer>
 
     <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="./js/main.js"></script>
@@ -54,15 +58,15 @@
                         <tbody>
                 `;
                 orderHistory.forEach((order, index) => {
-                    tableHtml += `
-                        <tr>
-                            <td>${index + 1}</td>
-                            <td>${order.items.join(', ')}</td>
-                            <td class="text-end">$${order.totalAmount.toFixed(2)}</td>
-                            <td>${order.date}</td>
-                        </tr>
-                    `;
-                });
+                        tableHtml += `
+                            <tr>
+                                <td>${index + 1}</td>
+                                <td>${order.items.map(item => `${item.name} (x${item.quantity})`).join(', ')}</td>
+                                <td class="text-end">$${order.totalAmount.toFixed(2)}</td>
+                                <td>${order.date}</td>
+                            </tr>
+                        `;
+                    });
                 tableHtml += `
                         </tbody>
                     </table>

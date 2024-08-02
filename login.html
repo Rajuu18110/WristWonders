@@ -10,18 +10,19 @@
     <style>
         .login-container {
             max-width: 400px;
-            margin: 50px auto;
+            margin: 110px 110px auto 110px;
+            background-color: rgb(255, 255, 255);
         }
     </style>
 </head>
 
-<body>
-    
-    <div id="navload">
+<body class="backLogin">
+    <!-- Navbar will be loaded here -->
+    <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary" id="navbar"
+        style="background-color: #000000 !important;">
+    </nav>
 
-    </div>
-
-    <div class="container login-container">
+    <div class="container-fluid login-container p-5">
         <h1 class="text-center">Login</h1>
         <form id="loginForm">
             <div class="mb-3">
@@ -32,12 +33,18 @@
                 <label for="loginPassword" class="form-label">Password</label>
                 <input type="password" class="form-control" id="loginPassword" required>
             </div>
-            <button type="submit" class="btn btn-primary">Login</button>
+            <button type="submit" class="btn btn-outline-dark">Login</button>
         </form>
         <p class="text-center mt-3">Don't have an account? <a href="signup.html">Sign up here</a>.</p>
     </div>
 
+    
+    <!-- footer -->
+    <footer class="footer px-5 py-3 bg-black" id="footer">
+    </footer>
+
     <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
     <script>
         document.getElementById('loginForm').addEventListener('submit', function (event) {
             event.preventDefault();
@@ -48,7 +55,6 @@
             const storedUser = JSON.parse(localStorage.getItem('user'));
             if (storedUser && storedUser.email === email && storedUser.password === password) {
                 localStorage.setItem('loggedIn', 'true');
-                alert('Login successful!');
                 window.location.href = './index.html'; // Redirect to orders page
             } else {
                 alert('Invalid email or password.');

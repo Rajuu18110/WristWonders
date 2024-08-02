@@ -10,17 +10,19 @@
     <style>
         .signup-container {
             max-width: 400px;
-            margin: 50px auto;
+            margin: 60px 60px auto 110px;
+            background-color: #ffffff;
         }
     </style>
 </head>
 
-<body>
-    <div id="navload">
-
-    </div>
+<body class="backSignup">
+    <!-- Navbar will be loaded here -->
+    <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary" id="navbar"
+        style="background-color: #000000 !important;">
+    </nav>
     
-    <div class="container signup-container">
+    <div class="container signup-container px-5 py-3">
         <h1 class="text-center">Sign Up</h1>
         <form id="signupForm">
             <div class="mb-3">
@@ -36,15 +38,25 @@
                 <input type="email" class="form-control" id="signupEmail" required>
             </div>
             <div class="mb-3">
+                <label for="contact" class="form-label">Contact No:</label>
+                <input type="tel" class="form-control" id="contact" required>
+            </div>
+            <div class="mb-3">
                 <label for="signupPassword" class="form-label">Password</label>
                 <input type="password" class="form-control" id="signupPassword" required>
             </div>
-            <button type="submit" class="btn btn-primary">Sign Up</button>
+            <button type="submit" class="btn btn-outline-dark">Sign Up</button>
         </form>
         <p class="text-center mt-3">Already have an account? <a href="login.html">Login here</a>.</p>
     </div>
 
+    
+    <!-- footer -->
+    <footer class="footer px-5 py-3 bg-black" id="footer">
+    </footer>
+
     <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
     <script>
         document.getElementById('signupForm').addEventListener('submit', function (event) {
             event.preventDefault();
@@ -52,8 +64,9 @@
             const lastName = document.getElementById('lastName').value;
             const email = document.getElementById('signupEmail').value;
             const password = document.getElementById('signupPassword').value;
+            const contact = document.getElementById('contact').value;
 
-            const user = { firstName, lastName, email, password };
+            const user = { firstName, lastName, email, contact, password };
             localStorage.setItem('user', JSON.stringify(user));
             alert('Signup successful! Please log in.');
             window.location.href = 'login.html'; // Redirect to login page

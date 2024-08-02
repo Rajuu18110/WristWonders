@@ -10,7 +10,8 @@
     <style>
         .cart-item {
             display: flex;
-            align-items: center;
+            flex-direction: column;
+            align-items: flex-start;
             margin-bottom: 20px;
             background-color: #fff;
             border-radius: 8px;
@@ -19,10 +20,11 @@
         }
 
         .cart-item img {
-            width: 80px;
-            height: 80px;
+            width: 100%;
+            max-width: 80px;
+            height: auto;
             object-fit: cover;
-            margin-right: 20px;
+            margin-bottom: 15px;
             border-radius: 8px;
         }
 
@@ -33,11 +35,12 @@
 
         .cart-item .quantity-input {
             width: 60px;
-            margin-left: 20px;
+            margin-left: 0;
         }
 
         .cart-item button {
-            margin-left: auto;
+            margin-top: 10px;
+            align-self: flex-end;
         }
 
         .total-price {
@@ -56,22 +59,37 @@
             width: 100%;
         }
 
-        .table th, .table td {
+        .table th,
+        .table td {
             text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .cart-item {
+                flex-direction: row;
+            }
+
+            .cart-item img {
+                margin-right: 20px;
+            }
+
+            .cart-item .quantity-input {
+                margin-left: 20px;
+            }
         }
     </style>
 </head>
 
 <body class="bg-black">
     <!-- Navbar will be loaded here -->
-    <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary" id="navbar" style="background-color: #ffffff !important;"></nav>
+    <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary" id="navbar" style="background-color: #000000 !important;"></nav>
 
-    <div class="container-fluid px-5">
+    <div class="container-fluid px-5 border-3 border-top border-primary">
         <h1 class="text-center text-white my-4">Shopping Cart</h1>
         <div class="row">
             <!-- Cart Items -->
             <div class="col-md-8">
-                <div id="cartItems">
+                <div id="cartItems" class="row p-0">
                     <!-- Cart items will be inserted here dynamically -->
                 </div>
             </div>
@@ -93,6 +111,11 @@
             </div>
         </div>
     </div>
+
+    
+    <!-- footer -->
+    <footer class="footer px-5 py-3 bg-black" id="footer">
+    </footer>
 
     <!-- Scripts at the end of body for better performance -->
     <script src="./js/bootstrap.bundle.min.js"></script>
@@ -118,8 +141,8 @@
                 cartItem.className = 'cart-item';
 
                 cartItem.innerHTML = `
-                    <img src="${item.image}" alt="${item.name}">
-                    <div>
+                    <img src="${item.image}" class="col-2" alt="${item.name}">
+                    <div class="col-md-9 col-10">
                         <h5>${item.name}</h5>
                         ${displayDis ? `
                             <h6>Price: <span class="text-muted"><s>$${item.price.toFixed(2)}</s></span></h6>
@@ -127,12 +150,15 @@
                         ` : `
                             <h6>Price: $${item.price.toFixed(2)}</h6>
                         `}
+                        <p>Gender: ${item.gender}</p>
                         <div class="d-flex align-items-center">
                             <label for="quantity-${item.name}" class="me-2">Quantity:</label>
                             <input type="number" id="quantity-${item.name}" class="form-control quantity-input" value="${item.quantity}" min="1">
                         </div>
                     </div>
-                    <button class="btn btn-danger btn-sm remove-item" data-name="${item.name}">Remove</button>
+                    <div class="col-md-1 col-12 align-self-center">
+                        <button class="btn btn-danger btn-sm remove-item" data-name="${item.name}">Remove</button>
+                    </div>
                 `;
 
                 cartItem.querySelector('.quantity-input').addEventListener('change', (event) => {

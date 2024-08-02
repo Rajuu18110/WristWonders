@@ -28,36 +28,101 @@
 
         .discounted-price {
             color: #28a745;
-            font-weight: bold;
         }
     </style>
 </head>
 
 <body>
-    <nav id="loadNav"></nav>
+    <!-- Navbar will be loaded here -->
+    <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary" id="navbar"
+        style="background-color: #000000 !important;">
+    </nav>
 
-    <div class="container mt-5">
+    <div class="container-fluid mt-5">
         <div class="row">
-            <div class="col-md-6">
-                <img id="productImage" class="product-image img-fluid rounded" src="" alt="Product Image">
+            <div class="col-md-4">
+                <img id="productImage" class="product-image img-fluid rounded p-5" src="" alt="Product Image">
             </div>
-            <div class="col-md-6 product-details">
-                <h2 id="productName" class="display-4"></h2>
-                <h4 id="productBrand" class="text-muted"></h4>
-                <p id="productDescription" class="text-secondary"></p>
-                <h4 id="productPrice" class="text-primary"></h4>
-                <h4 id="productDiscountedPrice" class="discounted-price"></h4>
+            <div class="col-md-8 product-details">
+                <h2 id="productName" class="fw-bold"></h2>
+                <h5 id="productBrand" class="text-muted"></h5>
                 <p id="productGender" class="font-weight-bold"></p>
+                <p id="productDescription" class="text-secondary"></p>
+                <h5 id="productPrice" class="text-primary"></h5>
+                <h5 id="productDiscountedPrice" class="discounted-price"></h5>
                 <div id="productRating" class="rating"></div>
                 <p id="productNumRatings"></p>
                 <div class="d-flex align-items-center mb-3">
                     <label for="quantity" class="me-2">Quantity:</label>
                     <input type="number" id="quantity" class="form-control quantity-input" value="1" min="1">
                 </div>
-                <button id="addToCartButton" class="btn btn-primary btn-lg">Add to Cart</button>
+                <button id="addToCartButton" class="btn btn-outline-dark ">Add to Cart</button>
             </div>
         </div>
     </div>
+
+    <!-- customer review -->
+    <div class="container-fluid mt-5">
+        <h3 class="text-center mb-4">Customer Reviews</h3>
+        <div class="row p-0">
+            <!-- Review 1 -->
+            <div class="col-12 p-3">
+                <div class="card review-card">
+                    <div class="card-body">
+                        <h5 class="card-title">John Doe</h5>
+                        <div class="review-rating mb-2">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-half"></i>
+                        </div>
+                        <p class="card-text">This watch is amazing! The build quality is superb and it looks fantastic. Worth every penny!</p>
+                        <p class="text-muted">Reviewed on: August 1, 2024</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Review 2 -->
+            <div class="col-12 p-3">
+                <div class="card review-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Jane Smith</h5>
+                        <div class="review-rating mb-2">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star"></i>
+                            <i class="bi bi-star"></i>
+                        </div>
+                        <p class="card-text">Good watch but the strap could be better. Overall, it's a nice piece and I'm satisfied with my purchase.</p>
+                        <p class="text-muted">Reviewed on: July 15, 2024</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Review 3 -->
+            <div class="col-12 p-3">
+                <div class="card review-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Alex Johnson</h5>
+                        <div class="review-rating mb-2">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="card-text">Excellent watch with fantastic features. The design is sleek, and it performs very well. Highly recommended!</p>
+                        <p class="text-muted">Reviewed on: June 30, 2024</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- footer -->
+    <footer class="footer px-5 py-3 bg-black" id="footer">
+    </footer>
 
     <!-- Scripts at the end of body for better performance -->
     <script src="./js/bootstrap.bundle.min.js"></script>
