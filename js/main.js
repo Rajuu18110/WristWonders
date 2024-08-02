@@ -98,29 +98,29 @@ itemstopSellSlide.forEach((el) => {
     }
 })
 
-document.addEventListener('DOMContentLoaded', function () {
-    // Select all cards
-    const cards = document.querySelectorAll('.card');
+// document.addEventListener('DOMContentLoaded', function () {
+//     // Select all cards
+//     const cards = document.querySelectorAll('.card');
 
-    // Loop through each card
-    cards.forEach(function (card) {
-        // Select the images inside the card
-        const img1 = card.querySelector('.img1');
-        const img2 = card.querySelector('.img2');
+//     // Loop through each card
+//     cards.forEach(function (card) {
+//         // Select the images inside the card
+//         const img1 = card.querySelector('.img1');
+//         const img2 = card.querySelector('.img2');
 
-        // Add event listener for mouse enter
-        card.addEventListener('mouseenter', function () {
-            img1.style.display = 'none';
-            img2.style.display = 'block';
-        });
+//         // Add event listener for mouse enter
+//         card.addEventListener('mouseenter', function () {
+//             img1.style.display = 'none';
+//             img2.style.display = 'block';
+//         });
 
-        // Add event listener for mouse leave
-        card.addEventListener('mouseleave', function () {
-            img1.style.display = 'block';
-            img2.style.display = 'none';
-        });
-    });
-});
+//         // Add event listener for mouse leave
+//         card.addEventListener('mouseleave', function () {
+//             img1.style.display = 'block';
+//             img2.style.display = 'none';
+//         });
+//     });
+// });
 
 document.addEventListener('DOMContentLoaded', () => {
     const cartItemsContainer = document.getElementById('cartItems');

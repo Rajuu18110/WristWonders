@@ -54,15 +54,15 @@
                         <tbody>
                 `;
                 orderHistory.forEach((order, index) => {
-                    tableHtml += `
-                        <tr>
-                            <td>${index + 1}</td>
-                            <td>${order.items.join(', ')}</td>
-                            <td class="text-end">$${order.totalAmount.toFixed(2)}</td>
-                            <td>${order.date}</td>
-                        </tr>
-                    `;
-                });
+                        tableHtml += `
+                            <tr>
+                                <td>${index + 1}</td>
+                                <td>${order.items.map(item => `${item.name} (x${item.quantity})`).join(', ')}</td>
+                                <td class="text-end">$${order.totalAmount.toFixed(2)}</td>
+                                <td>${order.date}</td>
+                            </tr>
+                        `;
+                    });
                 tableHtml += `
                         </tbody>
                     </table>

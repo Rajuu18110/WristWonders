@@ -10,7 +10,8 @@
     <style>
         .cart-item {
             display: flex;
-            align-items: center;
+            flex-direction: column;
+            align-items: flex-start;
             margin-bottom: 20px;
             background-color: #fff;
             border-radius: 8px;
@@ -19,10 +20,11 @@
         }
 
         .cart-item img {
-            width: 80px;
-            height: 80px;
+            width: 100%;
+            max-width: 80px;
+            height: auto;
             object-fit: cover;
-            margin-right: 20px;
+            margin-bottom: 15px;
             border-radius: 8px;
         }
 
@@ -33,11 +35,12 @@
 
         .cart-item .quantity-input {
             width: 60px;
-            margin-left: 20px;
+            margin-left: 0;
         }
 
         .cart-item button {
-            margin-left: auto;
+            margin-top: 10px;
+            align-self: flex-end;
         }
 
         .total-price {
@@ -56,8 +59,23 @@
             width: 100%;
         }
 
-        .table th, .table td {
+        .table th,
+        .table td {
             text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .cart-item {
+                flex-direction: row;
+            }
+
+            .cart-item img {
+                margin-right: 20px;
+            }
+
+            .cart-item .quantity-input {
+                margin-left: 20px;
+            }
         }
     </style>
 </head>
@@ -71,7 +89,7 @@
         <div class="row">
             <!-- Cart Items -->
             <div class="col-md-8">
-                <div id="cartItems">
+                <div id="cartItems" class="row p-0">
                     <!-- Cart items will be inserted here dynamically -->
                 </div>
             </div>
@@ -118,8 +136,8 @@
                 cartItem.className = 'cart-item';
 
                 cartItem.innerHTML = `
-                    <img src="${item.image}" alt="${item.name}">
-                    <div>
+                    <img src="${item.image}" class="col-2" alt="${item.name}">
+                    <div class="col-md-9 col-10">
                         <h5>${item.name}</h5>
                         ${displayDis ? `
                             <h6>Price: <span class="text-muted"><s>$${item.price.toFixed(2)}</s></span></h6>
@@ -132,7 +150,9 @@
                             <input type="number" id="quantity-${item.name}" class="form-control quantity-input" value="${item.quantity}" min="1">
                         </div>
                     </div>
-                    <button class="btn btn-danger btn-sm remove-item" data-name="${item.name}">Remove</button>
+                    <div class="col-md-1 col-12 align-self-center">
+                        <button class="btn btn-danger btn-sm remove-item" data-name="${item.name}">Remove</button>
+                    </div>
                 `;
 
                 cartItem.querySelector('.quantity-input').addEventListener('change', (event) => {
