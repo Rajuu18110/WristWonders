@@ -17,6 +17,14 @@
     height: 50px; /* Adjust the size as needed */
 }
 
+.dropdown-menu a:hover,.dropdown-menu #logoutButton:hover{
+    color: black !important;
+}
+
+.border-primary{
+    border-color: #f39c12 !important;
+}
+
 .topSellImg{
     position: relative;
     width: max-content;
@@ -72,40 +80,80 @@
     transform: translateX(0);
 }
 
-/* .video-background {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-}
-.video-background video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-}
-.content-box {
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-.content-box img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin-bottom: 10px;
+.backLogin{
+    background-image: url(../img/login.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.video-imgbox{
+.backSignup{
+    background-image: url(../img/signup.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.proImage{
+    background-image: url(../img/main1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+/* testiminial*/
+.testiborder{
+    border: 10px double #f39c12;
+}
+@media (max-width: 767px) {
+    .carousel-inner .carousel-item.testislide>div {
+        display: none;
+    }
+
+    .carousel-inner .carousel-item.testislide>div:first-child {
+        display: block;
+    }
+}
+
+.carousel-inner .carousel-item.testislide.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
     display: flex;
-    
-} */
+}
 
-/* men page */
+@media (min-width: 768px) {
+
+    .carousel-inner.testi .carousel-item-end.active,
+    .carousel-inner.testi .carousel-item-next {
+        transform: translateX(33.33%);
+    }
+
+    .carousel-inner.testi .carousel-item-start.active,
+    .carousel-inner.testi .carousel-item-prev {
+        transform: translateX(-33.33%);
+    }
+}
+
+.carousel-inner.testi .carousel-item-end,
+.carousel-inner.testi .carousel-item-start {
+    transform: translateX(0);
+}
+/* nav */
+.nav-item .active {
+    color: #f39c12 !important;
+}
+.nav-link:hover {
+    color: #f39c12 !important;
+}
+.dropdown-menu a:hover {
+    background-color: black !important;
+    color: #f39c12 !important;
+}
+.dropdown-item.active, .dropdown-item:active {
+    background-color: black !important;
+}
+/* footer */
+.footlink{
+    text-decoration: none;
+}
+.footlink:hover{
+    color: #f39c12 !important;
+}

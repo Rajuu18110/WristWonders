@@ -10,8 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(data => {
             document.getElementById('navbar').innerHTML = data;
             updateNavbar()
-            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link, .dropdown-menu .dropdown-item, .dropdown .nav-link');
             const currentPath = window.location.pathname.split('/').pop();
+            console.log(currentPath);
 
             navLinks.forEach(link => {
                 const href = link.getAttribute('href').split('/').pop();
@@ -36,15 +37,15 @@ function updateNavbar() {
 
     if (isLoggedIn) {
         userSection.innerHTML = `
-            <div class="dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <div class="dropdown bg-black">
+                <a class="nav-link dropdown-toggle text-white fw-bold" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     ${name.firstName}
                 </a>
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                    <li><a class="dropdown-item" href="./profile.html">Edit Info</a></li>
-                    <li><a class="dropdown-item" href="./orders.html">Orders</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li class="dropdown-item" id="logoutButton">Logout</li>
+                <ul class="dropdown-menu dropdown-menu-end  bg-black border border-white" aria-labelledby="userDropdown">
+                    <li><a class="dropdown-item text-white fw-bold" href="./profile.html">Edit Info</a></li>
+                    <li><a class="dropdown-item text-white fw-bold" href="./orders.html">Orders</a></li>
+                    <li><hr class="dropdown-divider border-white"></li>
+                    <li class="dropdown-item text-white fw-bold" id="logoutButton">Logout</li>
                 </ul>
             </div>
         `;
@@ -56,10 +57,27 @@ function updateNavbar() {
         });
     } else {
         userSection.innerHTML = `
-            <a class="nav-link" href="./login.html">Login</a>
+            <a class="nav-link text-white fw-bold" href="./login.html">Login</a>
         `;
     }
 }
+// testimonial
+let itemsTest = document.querySelectorAll('.carousel .carousel-item.testislide')
+
+itemsTest.forEach((el) => {
+    const minPerSlide = 3
+    let next = el.nextElementSibling
+    for (var i = 1; i < minPerSlide; i++) {
+        if (!next) {
+            // wrap carousel by using first child
+            next = itemsTest[0]
+        }
+        let cloneChild = next.cloneNode(true)
+        el.appendChild(cloneChild.children[0])
+        next = next.nextElementSibling
+    }
+})
+
 // // back to top
 // document.addEventListener('DOMContentLoaded', () => {
 //     const backToTopButton = document.getElementById('backToTop');
@@ -188,6 +206,22 @@ document.addEventListener('DOMContentLoaded', () => {
     renderCartItems();
 });
 
+// scripts/footer.js
+document.addEventListener('DOMContentLoaded', () => {
+    fetch('./components/footer.html')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+        });
+});
 // document.addEventListener('DOMContentLoaded', () => {
 //     const typeCheckboxes = document.querySelectorAll('input[type="checkbox"][id^="type"]');
 //     const brandCheckboxes = document.querySelectorAll('input[type="checkbox"][id^="brand"]');

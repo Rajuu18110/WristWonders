@@ -17,7 +17,8 @@
 
 <body>
     <!-- Navbar will be loaded here -->
-    <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary" id="navbar" style="background-color: #ffffff !important;">
+    <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary" id="navbar"
+        style="background-color: #000000 !important;">
     </nav>
 
     <!-- Responsive video section -->
@@ -33,6 +34,9 @@
     <!-- Welcome message -->
     <div class="container-fluid p-0">
         <div class="row m-md-5 p-md-5">
+            <div class="col-md-4">
+                <img src="./img/logo/black.png" class="img-fluid" alt="...">
+            </div>
             <div class="col-md-8 p-5 p-md-0">
                 <h1>Welcome to WristWonders</h1>
                 <p>Discover the ultimate destination for all your watch desires. At WatchWorld, we bring you an
@@ -45,14 +49,16 @@
                     user-friendly interface, detailed product information, and exceptional customer service.</p>
                 <p>Thank you for choosing WatchWorld. We're excited to help you find your next favorite watch!</p>
             </div>
-            <div class="col-md-4">
-                <img src="./img/logo/black.png" class="img-fluid" alt="...">
-            </div>
         </div>
     </div>
 
     <!-- Top sell bar -->
-    <div class="container-fluid bg-black">
+    <div class="container-fluid p-4 bg-black">
+        <div>
+            <h1 class="text-center mb-5 text-white">
+                Top Watches
+            </h1>
+        </div>
         <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-5 p-md-3 pb-md-5 pb-5">
             <!-- Product cards will be dynamically injected here -->
         </div>
@@ -65,9 +71,9 @@
                 <h1>True Square X Kunihiko Morinaga Special Edition</h1>
                 <p>MAKING THE INVISIBLE VISIBLE</p>
                 <hr class="my-4">
-                <a href="#" class="btn btn-dark">Discover more</a>
+                <a href="./productView.html?name=R005" class="btn btn-dark">Discover more</a>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 px-2">
                 <video autoplay loop class="img-fluid">
                     <source src="./videos/makeRado.mp4" type="video/mp4">
                     Your browser does not support the video tag.
@@ -76,13 +82,202 @@
         </div>
     </div>
 
+
+    <!--testimonial-->
+    <div class="container-fluid p-4 testimonial bg-black">
+        <div>
+            <h1 class="text-center mb-5 text-white">
+                Testimonial
+            </h1>
+        </div>
+        <div class="row mx-auto my-auto justify-content-center">
+            <div id="testislide" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner testi" role="">
+                    <div class="carousel-item testislide active" data-bs-interval="2000">
+                        <div class="col-md-4 p-0 p-md-3">
+                            <div class="testiborder bg-light p-3 card h-100">
+                                <div class="card-body mb-2">
+                                    <p class="card-text">Absolutely love this watch! The quality is outstanding and it
+                                        looks fantastic.</p>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <img src="./img/logo/user1.png" class="m-1 rounded-circle" alt="...">
+                                    <h5 class="card-title ps-2">Dhaval Kutar</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item testislide" data-bs-interval="2000">
+                        <div class="col-md-4 p-0 p-md-3">
+                            <div class="testiborder bg-light p-3 card h-100">
+                                <div class="card-body mb-2">
+                                    <p class="card-text">Great value for money. It’s exactly what I was looking for.</p>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <img src="./img/logo/user1.png" class="m-1 rounded-circle" alt="...">
+                                    <h5 class="card-title ps-2">Preksha Mehta</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item testislide" data-bs-interval="2000">
+                        <div class="col-md-4 p-0 p-md-3">
+                            <div class="testiborder bg-light p-3 card h-100">
+                                <div class="card-body mb-2">
+                                    <p class="card-text">The watch exceeded my expectations. Highly recommend it to
+                                        everyone!</p>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <img src="./img/logo/user1.png" class="m-1 rounded-circle" alt="...">
+                                    <h5 class="card-title ps-2">Fenil Patel</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item testislide" data-bs-interval="2000">
+                        <div class="col-md-4 p-0 p-md-3">
+                            <div class="testiborder bg-light p-3 card h-100">
+                                <div class="card-body mb-2">
+                                    <p class="card-text">Elegant design and precise timekeeping. I’m very pleased with
+                                        my purchase.</p>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <img src="./img/logo/user1.png" class="m-1 rounded-circle" alt="...">
+                                    <h5 class="card-title ps-2">Nirlep Tamboli</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item testislide" data-bs-interval="2000">
+                        <div class="col-md-4 p-0 p-md-3">
+                            <div class="testiborder bg-light p-3 card h-100">
+                                <div class="card-body mb-2">
+                                    <p class="card-text">Exceptional customer service and a beautiful watch. Worth every
+                                        cent.</p>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <img src="./img/logo/user1.png" class="m-1 rounded-circle" alt="...">
+                                    <h5 class="card-title ps-2">Rutu Patel</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item testislide" data-bs-interval="2000">
+                        <div class="col-md-4 p-0 p-md-3">
+                            <div class="testiborder bg-light p-3 card h-100">
+                                <div class="card-body mb-2">
+                                    <p class="card-text">Stylish and durable. I get compliments on it all the time.</p>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <img src="./img/logo/user1.png" class="m-1 rounded-circle" alt="...">
+                                    <h5 class="card-title ps-2">Ayush Patel</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-end" style="height: 3rem;">
+                <div class="col-4 col-md-2">
+                    <a href="#testislide" role="button" data-bs-slide="prev"><i
+                            class="bi bi-arrow-left-circle text-white" style="font-size: 1.6rem;"></i></a>
+                    <a href="#testislide" role="button" data-bs-slide="next"><i
+                            class="bi bi-arrow-right-circle text-white" style="font-size: 1.6rem;"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Achievements -->
+    <div class="container-fluid p-5">
+        <div>
+            <h1 class="text-center mb-5">
+                What WristWonders have?
+            </h1>
+        </div>
+        <div class="row row-cols-1 row-cols-md-4 g-4 px-md-5 px-3">
+            <div class="col-md-3">
+                <img src="./img/logo/customers.png" class="mx-auto d-block" alt="" srcset="">
+                <h3 class="text-center mt-3">12000+</h3>
+                <h5 class="text-center">Happy Customer</h5>
+            </div>
+            <div class="col-md-3">
+                <img src="./img/logo/cars.png" class="mx-auto d-block" alt="" srcset="">
+                <h3 class="text-center mt-3">179+</h3>
+                <h5 class="text-center">Total Watches</h5>
+            </div>
+            <div class="col-md-3">
+                <img src="./img/logo/awards.png" class="mx-auto d-block" alt="" srcset="">
+                <h3 class="text-center mt-3">16+</h3>
+                <h5 class="text-center">Awards</h5>
+            </div>
+            <div class="col-md-3">
+                <img src="./img/logo/experience.png" class="mx-auto d-block" alt="" srcset="">
+                <h3 class="text-center mt-3">6+</h3>
+                <h5 class="text-center">years of experience</h5>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer px-5 py-3 bg-black" id="footer">
+        <!-- <div class="row m-0">
+            <div class="col-md-3 p-4">
+                <h3 class="text-white fw-bold">Dial Type</h3>
+                <a href="http://" class="text-white footlink"><i
+                        class="bi bi-watch text-white me-2"></i>Automatic</a><br>
+                <a href="http://" class="text-white footlink"><i class="bi bi-watch text-white me-2"></i>Quartz</a><br>
+                <a href="http://" class="text-white footlink"><i
+                        class="bi bi-watch text-white me-2"></i>Chronograph</a><br>
+                <a href="http://" class="text-white footlink"><i class="bi bi-watch text-white me-2"></i>Diver</a><br>
+                <a href="http://" class="text-white footlink"><i
+                        class="bi bi-watch text-white me-2"></i>Smartwatch</a><br>
+            </div>
+            <div class="col-md-3 p-4">
+                <h3 class="text-white fw-bold">Vehicle Company</h3>
+                <a href="http://" class="text-white footlink"><i class="bi bi-watch text-white me-2"></i>Rado</a><br>
+                <a href="http://" class="text-white footlink"><i class="bi bi-watch text-white me-2"></i>Citizen</a><br>
+                <a href="http://" class="text-white footlink"><i class="bi bi-watch text-white me-2"></i>Fossil</a><br>
+                <a href="http://" class="text-white footlink"><i class="bi bi-watch text-white me-2"></i>Armani Exchange</a><br>
+                <a href="http://" class="text-white footlink"><i class="bi bi-watch text-white me-2"></i>Omega</a><br>
+            </div>
+            <div class="col-md-3 p-4">
+                <h3 class="text-white fw-bold">Company</h3>
+                <a href="http://" class="text-white footlink"><i
+                        class="bi bi-watch text-white me-2"></i>Term&Condition</a><br>
+                <a href="http://" class="text-white footlink"><i class="bi bi-watch text-white me-2"></i>Private
+                    policy</a><br>
+                <a href="http://" class="text-white footlink"><i class="bi bi-watch text-white me-2"></i>Booking
+                    procedure</a><br>
+            </div>
+            <div class="col-md-3 p-4">
+                <h3 class="text-white fw-bold">Contact</h3>
+                <a href="http://" class="text-white footlink me-2"><i class="bi bi-facebook"
+                        style="font-size: 1.6rem;"></i></a>
+                <a href="http://" class="text-white footlink me-2"><i class="bi bi-whatsapp"
+                        style="font-size: 1.6rem;"></i></a>
+                <a href="http://" class="text-white footlink me-2"><i class="bi bi-envelope"
+                        style="font-size: 1.6rem;"></i></a>
+            </div>
+        </div>
+        <hr style="color: var(--bg-text-white)">
+        <div class="row p-0">
+            <div class="col-6 ps-4">
+                <p class="text-white ">©WristWonders, all rights reserved.</p>
+            </div>
+            <div class="col-6 align-self-end">
+                <p class="text-white ">Distributed By, Gujjus</p>
+            </div>
+        </div> -->
+    </footer>
+
     <!-- Scripts at the end of body for better performance -->
     <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="./js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const productList = document.querySelector('.container-fluid.bg-black .row');
-        
+
             // Function to load products from JSON
             async function loadProducts() {
                 try {
@@ -94,7 +289,7 @@
                     return [];
                 }
             }
-        
+
             // Function to create a product card
             function createProductCard(product) {
                 const hasDiscount = product.discount > 0;
@@ -116,10 +311,10 @@
                                     `}
                                 <div class="star-rating mb-2">
                                     ${Array.from({ length: 5 }, (_, index) => {
-                                        const isFull = index < Math.floor(product.rating);
-                                        const isHalf = index === Math.floor(product.rating) && (product.rating % 1) >= 0.5;
-                                        return `<i class="bi bi-star${isFull ? '-fill' : ''}${isHalf ? '-half' : ''}"></i>`;
-                                    }).join('')}
+                    const isFull = index < Math.floor(product.rating);
+                    const isHalf = index === Math.floor(product.rating) && (product.rating % 1) >= 0.5;
+                    return `<i class="bi bi-star${isFull ? '-fill' : ''}${isHalf ? '-half' : ''}"></i>`;
+                }).join('')}
                                     <span class="ms-2">(${product.numRatings} ratings)</span>
                                 </div>
                             </div>
@@ -130,22 +325,22 @@
                     </div>
                 `;
             }
-        
+
             // Function to add item to cart
             function addToCart(name, price, disPrice, image) {
                 const cart = JSON.parse(localStorage.getItem('cart')) || [];
                 const existingItem = cart.find(item => item.name === name);
-        
+
                 if (existingItem) {
                     existingItem.quantity += 1; // Increment quantity if item already exists
                 } else {
                     cart.push({ name, price, disPrice, image, quantity: 1 });
                 }
-        
+
                 localStorage.setItem('cart', JSON.stringify(cart));
                 alert('Item added to cart!');
             }
-        
+
             // Function to add event listeners to "Add to Cart" buttons
             function addCartEventListeners() {
                 const addToCartButtons = document.querySelectorAll('.add-to-cart');
@@ -199,8 +394,8 @@
             // Load and display products
             loadProducts().then(renderProducts);
         });
-        </script>
-        
+    </script>
+
 </body>
 
 </html>
