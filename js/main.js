@@ -116,6 +116,126 @@ itemstopSellSlide.forEach((el) => {
     }
 })
 
+document.addEventListener('DOMContentLoaded', () => {
+    const productList = document.querySelector('.container-fluid.bg-black .row');
+
+    // Function to load products from JSON
+    async function loadProducts() {
+        try {
+            const response = await fetch('./js/watches_catalog.json');
+            const data = await response.json();
+            return data.products.filter(product => product.topShow && product.gender === 'men');
+        } catch (error) {
+            console.error('Error loading products:', error);
+            return [];
+        }
+    }
+
+    // Function to create a product card
+    function createProductCard(product) {
+        const hasDiscount = product.discount > 0;
+        const discountedPrice = product.price - (product.price * (product.discount / 100));
+        const productUrl = `./productView.html?name=${encodeURIComponent(product.product_id)}`;
+
+        return `
+            <div class="col">
+                <div class="card h-100">
+                    <img src="${product.image_url}" class="card-img-top img1 p-2" data-url="${productUrl}" alt="Product image" style="display: block;">
+                    <img src="${product.sideImg_url}" class="card-img-top img2 p-2" data-url="${productUrl}" alt="Product side image" style="display: none;">
+                    <div class="card-body">
+                        <h5 class="card-title" data-url="${productUrl}">${product.name}</h5>
+                        ${hasDiscount ? `
+                                <h6>Price: <span class="text-muted"><s>$${product.price.toFixed(2)}</s></span></h6>
+                                <h6>Discounted Price: $${discountedPrice.toFixed(2)}</h6>
+                            ` : `
+                                <h6>Price: $${product.price.toFixed(2)}</h6>
+                            `}
+                        <div class="star-rating mb-2">
+                            ${Array.from({ length: 5 }, (_, index) => {
+            const isFull = index < Math.floor(product.rating);
+            const isHalf = index === Math.floor(product.rating) && (product.rating % 1) >= 0.5;
+            return `<i class="bi bi-star${isFull ? '-fill' : ''}${isHalf ? '-half' : ''}"></i>`;
+        }).join('')}
+                            <span class="ms-2">(${product.numRatings} ratings)</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary add-to-cart" data-name="${product.name}" data-price="${product.price}" data-disPrice="${discountedPrice.toFixed(2)}" data-image="${product.image_url}">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    // Function to add item to cart
+    function addToCart(name, price, disPrice, image) {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const existingItem = cart.find(item => item.name === name);
+
+        if (existingItem) {
+            existingItem.quantity += 1; // Increment quantity if item already exists
+        } else {
+            cart.push({ name, price, disPrice, image, quantity: 1 });
+        }
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert('Item added to cart!');
+    }
+
+    // Function to add event listeners to "Add to Cart" buttons
+    function addCartEventListeners() {
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const name = button.getAttribute('data-name');
+                const price = parseFloat(button.getAttribute('data-price'));
+                const disPrice = parseFloat(button.getAttribute('data-disPrice'));
+                const image = button.getAttribute('data-image');
+                addToCart(name, price, disPrice, image);
+            });
+        });
+    }
+
+    // Function to set up event listeners
+    function setUpEventListeners() {
+        // Add event listeners for product images and titles
+        document.querySelectorAll('.card-img-top, .card-title').forEach(element => {
+            element.addEventListener('click', function () {
+                const productUrl = this.getAttribute('data-url');
+                if (productUrl) {
+                    window.location.href = productUrl;
+                }
+            });
+        });
+    }
+
+    // Function to render products
+    function renderProducts(products) {
+        productList.innerHTML = products.map(createProductCard).join('');
+        addCartEventListeners(); // Add event listeners to the new buttons
+        setUpEventListeners();
+
+        // Add event listeners for mouse enter and leave on cards
+        document.querySelectorAll('.card').forEach(card => {
+            const img1 = card.querySelector('.img1');
+            const img2 = card.querySelector('.img2');
+
+            card.addEventListener('mouseenter', () => {
+                img1.style.display = 'none';
+                img2.style.display = 'block';
+            });
+
+            card.addEventListener('mouseleave', () => {
+                img1.style.display = 'block';
+                img2.style.display = 'none';
+            });
+        });
+    }
+
+    // Load and display products
+    loadProducts().then(renderProducts);
+});
+
 // document.addEventListener('DOMContentLoaded', function () {
 //     // Select all cards
 //     const cards = document.querySelectorAll('.card');
